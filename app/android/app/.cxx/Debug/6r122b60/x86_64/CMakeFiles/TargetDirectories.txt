@@ -1,0 +1,12 @@
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/CMakeFiles/appmodules.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/CMakeFiles/edit_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/CMakeFiles/rebuild_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Dev/Traveling/TravelApp/TravelApp/android/app/.cxx/Debug/6r122b60/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

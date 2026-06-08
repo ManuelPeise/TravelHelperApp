@@ -1,0 +1,6 @@
+C:\Dev\Traveling\TravelApp\TravelApp\android\app\.cxx\Debug\6r122b60\x86\RNVectorIconsSpec_autolinked_build\CMakeFiles\react_codegen_RNVectorIconsSpec.dir\RNVectorIconsSpec-generated.cpp.o
+C:\Dev\Traveling\TravelApp\TravelApp\android\app\.cxx\Debug\6r122b60\x86\RNVectorIconsSpec_autolinked_build\CMakeFiles\react_codegen_RNVectorIconsSpec.dir\react\renderer\components\RNVectorIconsSpec\ComponentDescriptors.cpp.o
+C:\Dev\Traveling\TravelApp\TravelApp\android\app\.cxx\Debug\6r122b60\x86\RNVectorIconsSpec_autolinked_build\CMakeFiles\react_codegen_RNVectorIconsSpec.dir\react\renderer\components\RNVectorIconsSpec\EventEmitters.cpp.o
+C:\Dev\Traveling\TravelApp\TravelApp\android\app\.cxx\Debug\6r122b60\x86\RNVectorIconsSpec_autolinked_build\CMakeFiles\react_codegen_RNVectorIconsSpec.dir\react\renderer\components\RNVectorIconsSpec\Props.cpp.o
+C:\Dev\Traveling\TravelApp\TravelApp\android\app\.cxx\Debug\6r122b60\x86\RNVectorIconsSpec_autolinked_build\CMakeFiles\react_codegen_RNVectorIconsSpec.dir\react\renderer\components\RNVectorIconsSpec\ShadowNodes.cpp.o
+C:\Dev\Traveling\TravelApp\TravelApp\android\app\.cxx\Debug\6r122b60\x86\RNVectorIconsSpec_autolinked_build\CMakeFiles\react_codegen_RNVectorIconsSpec.dir\react\renderer\components\RNVectorIconsSpec\States.cpp.o

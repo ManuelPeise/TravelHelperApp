@@ -1,0 +1,82 @@
+{
+  "wordList": [
+    {
+      "category": "animals",
+      "words": [
+        { "en": "cat", "dk": "kat", "de": "katze" },
+        { "en": "dog", "dk": "hund", "de": "Hund" },
+        { "en": "bird", "dk": "fugl", "de": "Vogel" },
+        { "en": "fish", "dk": "fisk", "de": "Fisch" },
+        { "en": "horse", "dk": "hest", "de": "Pferd" },
+        { "en": "cow", "dk": "ko", "de": "Kuh" }
+      ]
+    },
+    {
+      "category": "colors",
+      "words": [
+        { "en": "red", "dk": "rød", "de": "Rot" },
+        { "en": "blue", "dk": "blå", "de": "Blau" },
+        { "en": "green", "dk": "grøn", "de": "Grün" },
+        { "en": "yellow", "dk": "gul", "de": "Gelb" },
+        { "en": "black", "dk": "sort", "de": "Schwarz" },
+        { "en": "white", "dk": "hvid", "de": "Weiß" }
+      ]
+    },
+    {
+      "category": "food",
+      "words": [
+        { "en": "bread", "dk": "brød", "de": "Brot" },
+        { "en": "milk", "dk": "mælk", "de": "Milch" },
+        { "en": "cheese", "dk": "ost", "de": "Käse" },
+        { "en": "apple", "dk": "æble", "de": "Apfel" },
+        { "en": "banana", "dk": "banan", "de": "Banane" },
+        { "en": "meat", "dk": "kød", "de": "Fleisch" }
+      ]
+    },
+    {
+      "category": "fruits",
+      "words": [
+        { "en": "apple", "dk": "æble", "de": "Apfel" },
+        { "en": "banana", "dk": "banan", "de": "Banane" },
+        { "en": "orange", "dk": "appelsin", "de": "Orange" },
+        { "en": "grape", "dk": "drue", "de": "Traube" },
+        { "en": "strawberry", "dk": "jordbær", "de": "Erdbeere" },
+        { "en": "watermelon", "dk": "vandmelon", "de": "Wassermelone" }
+      ]
+    },
+    {
+      "category": "greetings",
+      "words": [
+        { "en": "hello", "dk": "hej", "de": "Hallo" },
+        { "en": "goodbye", "dk": "farvel", "de": "Auf Wiedersehen" },
+        { "en": "please", "dk": "venligst", "de": "Bitte" },
+        { "en": "thank you", "dk": "tak", "de": "Danke" },
+        { "en": "yes", "dk": "ja", "de": "Ja" },
+        { "en": "no", "dk": "nej", "de": "Nein" }
+      ]
+    },
+    {
+      "category": "weather",
+      "words": [
+        { "en": "sunny", "dk": "solrigt", "de": "sonnig" },
+        { "en": "rainy", "dk": "regnfuldt", "de": "regnerisch" },
+        { "en": "cloudy", "dk": "overskyet", "de": "bewölkt" },
+        { "en": "snowy", "dk": "snefuldt", "de": "schneereich" },
+        { "en": "windy", "dk": "blæsende", "de": "windig" },
+        { "en": "stormy", "dk": "stormfuldt", "de": "stürmisch" }
+      ]
+    },
+    {
+      "category": "places",
+      "words": [
+        { "en": "beach", "dk": "strand", "de": "Strand" },
+        { "en": "mountain", "dk": "bjerg", "de": "Berg" },
+        { "en": "city", "dk": "by", "de": "Stadt" },
+        { "en": "village", "dk": "landsby", "de": "Dorf" },
+        { "en": "park", "dk": "park", "de": "Park" },
+        { "en": "forest", "dk": "skov", "de": "Wald" },
+        { "en": "lighthouse", "dk": "fyrtårn", "de": "Leuchtturm" }
+      ]
+    }
+  ]
+}
