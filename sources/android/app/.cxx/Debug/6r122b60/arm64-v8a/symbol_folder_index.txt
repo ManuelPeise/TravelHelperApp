@@ -1,1 +1,0 @@
-C:\Dev\Traveling\TravelApp\TravelApp\android\app\build\intermediates\cxx\Debug\6r122b60\obj\arm64-v8a

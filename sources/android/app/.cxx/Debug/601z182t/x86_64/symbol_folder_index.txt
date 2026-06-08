@@ -1,0 +1,1 @@
+C:\Dev\TravelHelper\TravelHelperApp\sources\android\app\build\intermediates\cxx\Debug\601z182t\obj\x86_64
