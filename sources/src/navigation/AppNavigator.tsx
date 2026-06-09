@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '@screens/HomeScreen';
 import VocabularyScreen from '@screens/VocabularyScreen';
 import type { RootTabParamList } from '@lib/types/navigation';
 import SettingsScreen from '@/screens/SettingsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
+import CurrencyConversionScreen from '@/screens/CurrencyConversionScreen';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -26,8 +26,8 @@ export default function AppNavigator() {
         headerTintColor: appTheme.text.primary,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: string;
-          if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
+          if (route.name === 'CurrencyConversion') {
+            iconName = focused ? 'cash' : 'cash-outline';
           } else if (route.name === 'Vocabulary') {
             iconName = focused ? 'book' : 'book-outline';
           } else {
@@ -45,9 +45,9 @@ export default function AppNavigator() {
       })}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{ headerShown: false, tabBarLabel: 'Home' }}
+        name="CurrencyConversion"
+        component={CurrencyConversionScreen}
+        options={{ headerShown: false, tabBarLabel: 'Rechner' }}
       />
       <Tab.Screen
         name="Vocabulary"

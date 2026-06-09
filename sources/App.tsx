@@ -6,6 +6,7 @@ import AppNavigator from '@/navigation/AppNavigator';
 import { initializeDatabase } from '@lib/database/SqliteDb';
 import SettingsProvider from '@/providers/SettingsProvider';
 import AppContainer from '@/components/AppContainer';
+import CurrencyConversionProvider from '@/providers/CurrencyConversionProvider';
 
 const App: React.FC = () => {
   const [dbReady, setDbReady] = useState(false);
@@ -30,11 +31,13 @@ const App: React.FC = () => {
   return (
     <SafeAreaProvider>
       <SettingsProvider>
-        <AppContainer>
-          <NavigationContainer>
-            <AppNavigator />
-          </NavigationContainer>
-        </AppContainer>
+        <CurrencyConversionProvider>
+          <AppContainer>
+            <NavigationContainer>
+              <AppNavigator />
+            </NavigationContainer>
+          </AppContainer>
+        </CurrencyConversionProvider>
       </SettingsProvider>
     </SafeAreaProvider>
   );

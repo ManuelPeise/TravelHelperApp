@@ -1,60 +1,29 @@
-import CurrencySelector, {
-  ICurrencySelectorProps,
-} from '@/components/CurrencySelector';
+import DropdownInput from '@/components/DropdownInput';
+import SwitchComponent from '@/components/SwitchComponent';
+import { useForm } from '@/hooks/useForm';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import { SupportedCurrencies } from '@/lib/constants';
 import { CurrencyEnum } from '@/lib/enums/CurrencyEnum';
-import { SelectableItemModel } from '@/lib/types/SelectableItemModel';
 import { Settings } from '@/lib/types/Settings';
 import React from 'react';
-import { Switch, Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 const SettingsScreen: React.FC = () => {
   const { appTheme, settings, saveOrUpdateSettings } = useSettingsContext();
 
-  const [currencySecectorProps, setCurrencySelectorProps] =
-    React.useState<ICurrencySelectorProps | null>(null);
+  const { values, handleChange } = useForm<Settings>({
+    id: 1,
+    sourceCurrency: (settings?.sourceCurrency as CurrencyEnum) || null,
+    targetCurrency: (settings?.targetCurrency as CurrencyEnum) || null,
+    theme: settings?.theme || 'system',
+  });
 
-  const currencyOptions = React.useMemo((): SelectableItemModel[] => {
-    return SupportedCurrencies.map(currency => ({
-      label: currency,
-      value: currency,
-    }));
-  }, []);
-
-  const onOpenCurrencySelector = (type: 'source' | 'target') => {
-    setCurrencySelectorProps({
-      open: true,
-      label: type === 'source' ? 'Quellwährung wählen' : 'Zielwährung wählen',
-      items:
-        type === 'source'
-          ? currencyOptions
-          : currencyOptions.filter(
-              item => item.value !== settings?.sourceCurrency,
-            ),
-      value:
-        type === 'source'
-          ? settings?.sourceCurrency ?? CurrencyEnum.EUR
-          : settings?.targetCurrency ?? CurrencyEnum.DKK,
-    });
-  };
-
-  const onChangeCurrency = React.useCallback(
-    async (value: CurrencyEnum) => {
-      const settingsUpdate: Settings = {
-        id: settings?.id || 1,
-        sourceCurrency: currencySecectorProps?.label.includes('Quellwährung')
-          ? value
-          : settings?.sourceCurrency || CurrencyEnum.EUR,
-        targetCurrency: currencySecectorProps?.label.includes('Zielwährung')
-          ? value
-          : settings?.targetCurrency || CurrencyEnum.DKK,
-        theme: settings?.theme || 'system',
-      };
-      await saveOrUpdateSettings(settingsUpdate, true);
-      setCurrencySelectorProps(null);
+  const handleSettingsChange = React.useCallback(
+    (field: keyof Settings, value: any) => {
+      handleChange(field, value);
+      saveOrUpdateSettings({ ...values, [field]: value });
     },
-    [saveOrUpdateSettings, currencySecectorProps, settings],
+    [saveOrUpdateSettings, values],
   );
 
   return (
@@ -97,120 +66,44 @@ const SettingsScreen: React.FC = () => {
           borderRadius: 0,
         }}
       >
-        <TouchableOpacity
-          style={{
-            width: '100%',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-          onPress={() => onOpenCurrencySelector('source')}
-        >
-          <Text
-            style={{
-              color: appTheme.text.primary,
-              fontSize: 16,
-              fontWeight: 'bold',
-            }}
-          >
-            Quellwährung
-          </Text>
-          <Text
-            style={{
-              color: appTheme.text.primary,
-              fontSize: 16,
-              paddingRight: 12,
-            }}
-          >
-            {settings?.sourceCurrency || CurrencyEnum.EUR}
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
-      >
-        <TouchableOpacity
-          style={{
-            width: '100%',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-          onPress={() => onOpenCurrencySelector('target')}
-        >
-          <Text
-            style={{
-              color: appTheme.text.primary,
-              fontSize: 16,
-              fontWeight: 'bold',
-            }}
-          >
-            Zielwährung
-          </Text>
-          <Text
-            style={{
-              color: appTheme.text.primary,
-              fontSize: 16,
-              paddingRight: 12,
-            }}
-          >
-            {settings?.targetCurrency || CurrencyEnum.DKK}
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
-      >
-        <View
-          style={{
-            width: '100%',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Text
-            style={{
-              color: appTheme.text.primary,
-              fontSize: 16,
-              fontWeight: 'bold',
-            }}
-          >
-            Theme (hell / dunkel)
-          </Text>
-
-          <Switch
-            value={settings?.theme === 'dark'}
-            onValueChange={value => {
-              const newTheme = value ? 'dark' : 'light';
-              const settingsUpdate: Settings = {
-                id: settings?.id || 1,
-                sourceCurrency: settings?.sourceCurrency || CurrencyEnum.EUR,
-                targetCurrency: settings?.targetCurrency || CurrencyEnum.DKK,
-                theme: newTheme,
-              };
-              saveOrUpdateSettings(settingsUpdate, true);
-            }}
-          />
-        </View>
-      </View>
-      {currencySecectorProps && (
-        <CurrencySelector
-          {...currencySecectorProps}
-          onClose={() => setCurrencySelectorProps(null)}
-          onChange={onChangeCurrency}
+        <DropdownInput
+          options={SupportedCurrencies}
+          label="Quellwährung"
+          value={values.sourceCurrency}
+          onValueChange={value => handleSettingsChange('sourceCurrency', value)}
         />
-      )}
+      </View>
+      <View
+        style={{
+          width: '100%',
+          padding: 20,
+          backgroundColor: appTheme.card,
+          borderRadius: 0,
+        }}
+      >
+        <DropdownInput
+          options={SupportedCurrencies.filter(c => c !== values.sourceCurrency)}
+          label="Zielwährung"
+          value={values.targetCurrency}
+          onValueChange={value => handleSettingsChange('targetCurrency', value)}
+        />
+      </View>
+      <View
+        style={{
+          width: '100%',
+          padding: 20,
+          backgroundColor: appTheme.card,
+          borderRadius: 0,
+        }}
+      >
+        <SwitchComponent
+          label="Dark Mode"
+          value={values.theme === 'dark'}
+          onValueChange={value =>
+            handleSettingsChange('theme', value ? 'dark' : 'light')
+          }
+        />
+      </View>
     </View>
   );
 };

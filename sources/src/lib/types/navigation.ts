@@ -1,5 +1,5 @@
 export type RootTabParamList = {
-  Home: undefined;
+  CurrencyConversion: undefined;
   Vocabulary: undefined;
   Settings: undefined;
 };
