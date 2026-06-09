@@ -19,15 +19,6 @@ const initializeDatabase = async (): Promise<void> => {
   const db = await getDatabase();
 
   await db.executeSql(
-    `CREATE TABLE IF NOT EXISTS exchange_rates (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      currency TEXT NOT NULL,
-      value REAL NOT NULL,
-      date TEXT NOT NULL
-    );`,
-  );
-
-  await db.executeSql(
     `CREATE TABLE IF NOT EXISTS settings (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       sourceCurrency TEXT NOT NULL,
