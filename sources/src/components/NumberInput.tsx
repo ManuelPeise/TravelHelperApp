@@ -114,20 +114,30 @@ const NumberInput: React.FC<NumberInputProps> = props => {
   }
 
   return (
-    <TextInput
+    <View
       style={[
-        styles.input,
-        { backgroundColor: appTheme.background.secondary },
-        color ? { color } : { color: appTheme.text.primary },
+        styles.container,
+        {
+          backgroundColor: appTheme.background.secondary,
+          borderColor: appTheme.border,
+        },
       ]}
-      keyboardType="numeric"
-      placeholder={placeholder}
-      value={displayValue}
-      onChangeText={handleChange}
-      onFocus={() => setFocused(true)}
-      onBlur={() => setFocused(false)}
-      placeholderTextColor={placeholderTextColor ?? appTheme.text.disabled}
-    />
+    >
+      <TextInput
+        style={[
+          styles.input,
+          { backgroundColor: appTheme.background.secondary },
+          color ? { color } : { color: appTheme.text.primary },
+        ]}
+        keyboardType="numeric"
+        placeholder={placeholder}
+        value={displayValue}
+        onChangeText={handleChange}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        placeholderTextColor={placeholderTextColor ?? appTheme.text.disabled}
+      />
+    </View>
   );
 };
 
@@ -140,8 +150,9 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   input: {
+    width: '100%',
     height: 40,
-    borderWidth: 1,
+    borderWidth: 0,
     borderRadius: 8,
     paddingHorizontal: 12,
   },

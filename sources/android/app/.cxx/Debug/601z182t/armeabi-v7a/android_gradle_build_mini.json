@@ -1,5 +1,6 @@
 {
   "buildFiles": [
+    "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-localize\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-safe-area-context\\android\\src\\main\\jni\\CMakeLists.txt",
     "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-screens\\android\\src\\main\\jni\\CMakeLists.txt",
     "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-vector-icons\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
@@ -56,6 +57,11 @@
         "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\2321ffcfab7439b6200de4724cf7ba76\\workspace\\transformed\\react-android-0.85.3-debug\\prefab\\modules\\jsi\\libs\\android.armeabi-v7a\\libjsi.so",
         "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\2321ffcfab7439b6200de4724cf7ba76\\workspace\\transformed\\react-android-0.85.3-debug\\prefab\\modules\\reactnative\\libs\\android.armeabi-v7a\\libreactnative.so"
       ]
+    },
+    "react_codegen_RNLocalizeSpec::@f3ba5298aff84514e205": {
+      "artifactName": "react_codegen_RNLocalizeSpec",
+      "abi": "armeabi-v7a",
+      "runtimeFiles": []
     }
   }
 }

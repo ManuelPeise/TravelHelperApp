@@ -27,6 +27,35 @@ const initializeDatabase = async (): Promise<void> => {
     );`,
   );
 
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS shopping (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      date TEXT NOT NULL
+    );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS product (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      category TEXT NOT NULL
+    );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS shopping_plan (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      fk_shoppingId INTEGER NOT NULL,
+      fk_productId INTEGER NOT NULL,
+      quantity REAL NOT NULL DEFAULT 1,
+      price REAL NOT NULL DEFAULT 0,
+      completed INTEGER NOT NULL DEFAULT 0,
+      FOREIGN KEY (fk_shoppingId) REFERENCES shopping(id),
+      FOREIGN KEY (fk_productId) REFERENCES product(id)
+    );`,
+  );
+
   const [settingsResult] = await db.executeSql(
     'SELECT COUNT(*) as count FROM settings',
   );
@@ -37,7 +66,7 @@ const initializeDatabase = async (): Promise<void> => {
       {
         sourceCurrency: CurrencyEnum.EUR,
         targetCurrency: CurrencyEnum.DKK,
-        theme: 'system',
+        theme: 'dark',
       },
       false,
     );

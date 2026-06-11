@@ -5,6 +5,7 @@ import SettingsScreen from '@/screens/SettingsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import CurrencyConversionScreen from '@/screens/CurrencyConversionScreen';
+import { ShoppingListScreen } from '@/screens/shoppingList/ShoppingListScreen';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -30,6 +31,8 @@ export default function AppNavigator() {
             iconName = focused ? 'cash' : 'cash-outline';
           } else if (route.name === 'Vocabulary') {
             iconName = focused ? 'book' : 'book-outline';
+          } else if (route.name === 'ShoppingList') {
+            iconName = focused ? 'list' : 'list-outline';
           } else {
             iconName = focused ? 'settings' : 'settings-outline';
           }
@@ -48,6 +51,11 @@ export default function AppNavigator() {
         name="CurrencyConversion"
         component={CurrencyConversionScreen}
         options={{ headerShown: false, tabBarLabel: 'Rechner' }}
+      />
+      <Tab.Screen
+        name="ShoppingList"
+        component={ShoppingListScreen}
+        options={{ headerShown: false, tabBarLabel: 'Einkaufsliste' }}
       />
       <Tab.Screen
         name="Vocabulary"

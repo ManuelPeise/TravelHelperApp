@@ -6,9 +6,11 @@ import { useSettingsContext } from '@/hooks/useSettingsContext';
 import { View, Text, StyleSheet } from 'react-native';
 import { useForm } from '@/hooks/useForm';
 import { CurrencyConversionFormModel } from '@/lib/types/CurrencyConversionFormModel';
+import { useLocalization } from '@/hooks/useLocalization';
 
 const CurrencyConversionScreen: React.FC = () => {
   const { appTheme, settings } = useSettingsContext();
+  const { getResource } = useLocalization();
 
   const { values, handleChange, resetForm, isModified } =
     useForm<CurrencyConversionFormModel>({
@@ -78,10 +80,10 @@ const CurrencyConversionScreen: React.FC = () => {
             fontWeight: 'bold',
           }}
         >
-          Währungsrechner
+          {getResource('titleCurrencyCalculator')}
         </Text>
         <Text style={{ color: appTheme.text.secondary, marginTop: 12 }}>
-          Hier können Sie Ihre Währungen umrechnen.
+          {getResource('labelCurrencyCalculatorDescription')}
         </Text>
       </View>
       <View
@@ -100,7 +102,7 @@ const CurrencyConversionScreen: React.FC = () => {
           ]}
         >
           <DropdownInput
-            label="Quellwährung"
+            label={getResource('labelSourceCurrency')}
             options={supportedCurrencies}
             value={values.fromCurrency}
             onValueChange={handleSourceCurrencyChange}
@@ -108,14 +110,17 @@ const CurrencyConversionScreen: React.FC = () => {
           <NumberInput
             value={fromAmount?.toString() || null}
             onChange={value => handleChange('fromAmount', value)}
-            placeholder={`Geben Sie den Betrag in ${values.fromCurrency} ein`}
+            placeholder={getResource('placeholderEnterAmount').replace(
+              '{currency}',
+              values.fromCurrency || '',
+            )}
             placeholderTextColor={appTheme.text.secondary}
             color={appTheme.text.primary}
             hasClearButton={true}
             onClear={() => handleChange('fromAmount', null)}
           />
           <DropdownInput
-            label="Zielwährung"
+            label={getResource('labelTargetCurrency')}
             options={supportedCurrencies.filter(c => c !== values.fromCurrency)}
             value={values.toCurrency}
             onValueChange={value => handleChange('toCurrency', value)}

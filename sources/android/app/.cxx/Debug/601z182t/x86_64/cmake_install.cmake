@@ -44,6 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/RNLocalizeSpec_autolinked_build/cmake_install.cmake")
   include("C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/safeareacontext_autolinked_build/cmake_install.cmake")
   include("C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/rnscreens_autolinked_build/cmake_install.cmake")
   include("C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/RNVectorIconsSpec_autolinked_build/cmake_install.cmake")

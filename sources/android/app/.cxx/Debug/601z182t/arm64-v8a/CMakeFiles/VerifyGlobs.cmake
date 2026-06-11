@@ -12,6 +12,30 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
 endif()
 
+# react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/RNLocalizeSpec-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/react/renderer/components/RNLocalizeSpec/*.cpp")
+set(OLD_GLOB
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/react/renderer/components/RNLocalizeSpec/ComponentDescriptors.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/react/renderer/components/RNLocalizeSpec/EventEmitters.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/react/renderer/components/RNLocalizeSpec/Props.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/react/renderer/components/RNLocalizeSpec/ShadowNodes.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/react/renderer/components/RNLocalizeSpec/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
 # LIB_CUSTOM_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:12 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-safe-area-context/android/src/main/jni/*.cpp")
 set(OLD_GLOB

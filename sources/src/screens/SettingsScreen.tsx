@@ -1,6 +1,7 @@
 import DropdownInput from '@/components/DropdownInput';
 import SwitchComponent from '@/components/SwitchComponent';
 import { useForm } from '@/hooks/useForm';
+import { useLocalization } from '@/hooks/useLocalization';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import { SupportedCurrencies } from '@/lib/constants';
 import { CurrencyEnum } from '@/lib/enums/CurrencyEnum';
@@ -10,7 +11,7 @@ import { Text, View } from 'react-native';
 
 const SettingsScreen: React.FC = () => {
   const { appTheme, settings, saveOrUpdateSettings } = useSettingsContext();
-
+  const { getResource } = useLocalization();
   const { values, handleChange } = useForm<Settings>({
     id: 1,
     sourceCurrency: (settings?.sourceCurrency as CurrencyEnum) || null,
@@ -52,10 +53,10 @@ const SettingsScreen: React.FC = () => {
             fontWeight: 'bold',
           }}
         >
-          Einstellungen
+          {getResource('titleSettings')}
         </Text>
         <Text style={{ color: appTheme.text.secondary, marginTop: 12 }}>
-          Hier können Sie Ihre Einstellungen anpassen.
+          {getResource('labelSettingsDescription')}
         </Text>
       </View>
       <View
@@ -68,7 +69,7 @@ const SettingsScreen: React.FC = () => {
       >
         <DropdownInput
           options={SupportedCurrencies}
-          label="Quellwährung"
+          label={getResource('labelSourceCurrency')}
           value={values.sourceCurrency}
           onValueChange={value => handleSettingsChange('sourceCurrency', value)}
         />
@@ -83,7 +84,7 @@ const SettingsScreen: React.FC = () => {
       >
         <DropdownInput
           options={SupportedCurrencies.filter(c => c !== values.sourceCurrency)}
-          label="Zielwährung"
+          label={getResource('labelTargetCurrency')}
           value={values.targetCurrency}
           onValueChange={value => handleSettingsChange('targetCurrency', value)}
         />
@@ -97,7 +98,7 @@ const SettingsScreen: React.FC = () => {
         }}
       >
         <SwitchComponent
-          label="Dark Mode"
+          label={getResource('labelDarkMode')}
           value={values.theme === 'dark'}
           onValueChange={value =>
             handleSettingsChange('theme', value ? 'dark' : 'light')
