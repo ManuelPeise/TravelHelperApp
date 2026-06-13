@@ -56,6 +56,40 @@ const initializeDatabase = async (): Promise<void> => {
     );`,
   );
 
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS vocabulary_group (
+      id INTEGER PRIMARY KEY AUTOINCREMENT
+    );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS vocabulary_word (
+      id       INTEGER PRIMARY KEY AUTOINCREMENT,
+      group_id INTEGER NOT NULL,
+      word     TEXT NOT NULL,
+      lang     TEXT NOT NULL,
+      category    TEXT,
+      FOREIGN KEY (group_id) REFERENCES vocabulary_group(id)
+    );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS vocabulary_group (
+      id INTEGER PRIMARY KEY AUTOINCREMENT
+    );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS vocabulary_word (
+      id       INTEGER PRIMARY KEY AUTOINCREMENT,
+      group_id INTEGER NOT NULL,
+      word     TEXT NOT NULL,
+      lang     TEXT NOT NULL,
+      topic    TEXT,
+      FOREIGN KEY (group_id) REFERENCES vocabulary_group(id)
+    );`,
+  );
+
   const [settingsResult] = await db.executeSql(
     'SELECT COUNT(*) as count FROM settings',
   );

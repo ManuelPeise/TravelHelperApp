@@ -4,9 +4,7 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
-  Alert,
   StyleSheet,
-  Platform,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';

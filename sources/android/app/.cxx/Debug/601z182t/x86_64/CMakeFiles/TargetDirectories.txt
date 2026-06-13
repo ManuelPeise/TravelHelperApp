@@ -1,6 +1,12 @@
 C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/appmodules.dir
 C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/edit_cache.dir
 C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/rebuild_cache.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/AsyncStorageSpec_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/AsyncStorageSpec_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/rndocumentpicker_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/rndocumentpicker_autolinked_build/CMakeFiles/rebuild_cache.dir
 C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir
 C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/RNLocalizeSpec_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/RNLocalizeSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

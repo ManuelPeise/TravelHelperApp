@@ -12,6 +12,54 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
 endif()
 
+# react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/AsyncStorageSpec-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/AsyncStorageSpec/*.cpp")
+set(OLD_GLOB
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/AsyncStorageSpec/ComponentDescriptors.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/AsyncStorageSpec/EventEmitters.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/AsyncStorageSpec/Props.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/AsyncStorageSpec/ShadowNodes.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/AsyncStorageSpec/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/rndocumentpicker-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/react/renderer/components/rndocumentpicker/*.cpp")
+set(OLD_GLOB
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/react/renderer/components/rndocumentpicker/ComponentDescriptors.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/react/renderer/components/rndocumentpicker/EventEmitters.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/react/renderer/components/rndocumentpicker/Props.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/react/renderer/components/rndocumentpicker/ShadowNodes.cpp"
+  "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-document-picker/android/build/generated/source/codegen/jni/react/renderer/components/rndocumentpicker/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
 # react_codegen_SRCS at C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native-localize/android/build/generated/source/codegen/jni/*.cpp")
 set(OLD_GLOB

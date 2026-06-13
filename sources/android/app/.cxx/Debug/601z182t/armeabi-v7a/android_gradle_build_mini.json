@@ -1,5 +1,7 @@
 {
   "buildFiles": [
+    "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\@react-native-async-storage\\async-storage\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
+    "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-document-picker\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-localize\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-safe-area-context\\android\\src\\main\\jni\\CMakeLists.txt",
     "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\node_modules\\react-native-screens\\android\\src\\main\\jni\\CMakeLists.txt",
@@ -60,6 +62,16 @@
     },
     "react_codegen_RNLocalizeSpec::@f3ba5298aff84514e205": {
       "artifactName": "react_codegen_RNLocalizeSpec",
+      "abi": "armeabi-v7a",
+      "runtimeFiles": []
+    },
+    "react_codegen_rndocumentpicker::@1e246c1f1267e461f98b": {
+      "artifactName": "react_codegen_rndocumentpicker",
+      "abi": "armeabi-v7a",
+      "runtimeFiles": []
+    },
+    "react_codegen_AsyncStorageSpec::@15af80695a6281ecf900": {
+      "artifactName": "react_codegen_AsyncStorageSpec",
       "abi": "armeabi-v7a",
       "runtimeFiles": []
     }

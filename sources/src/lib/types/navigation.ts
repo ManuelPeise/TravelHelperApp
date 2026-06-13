@@ -1,3 +1,5 @@
+import { VocabularySettings } from '@/screens/vocabularyScreen/components/VocabularySettingsModal';
+
 export type RootTabParamList = {
   CurrencyConversion: undefined;
   Vocabulary: undefined;
@@ -8,4 +10,13 @@ export type RootTabParamList = {
 export type ShoppingListStackParamList = {
   ShoppingListOverview: undefined;
   ShoppingListDetail: { shoppingId: number; shoppingName: string };
+};
+
+export type VocabularyStackParamList = {
+  VocabularyOverview: undefined;
+  VocabularyLearning: {
+    category: string;
+    vocabularySettings: VocabularySettings;
+  };
+  VocabularyQuiz: { category: string; vocabularySettings: VocabularySettings };
 };

@@ -34,7 +34,21 @@
   "placeholderSearchProduct": "Produkt suchen…",
   "titleAddSchoppingList": "Einkaufsliste hinzufügen",
   "titleAvailableShoppingLists": "Verfügbare Einkaufslisten",
-  "titleCurrencyCalculator": "Währungsrechner",
   "titleDeleteShoppingList": "Einkaufsliste löschen",
-  "titleSettings": "Einstellungen"
+  "titleSettings": "Einstellungen",
+  "titleCurrencyCalculator": "Währungsrechner",
+  "titleShoppingLists": "Einkaufslisten",
+  "titleVocabulary": "Vokabeln",
+  "titleAvailableVocabularyCategories": "Verfügbare Kategorien",
+  "labelNoVocabularyCategories": "Keine Vokabelkategorien vorhanden!",
+  "labelWords": "({count}) Wörter verfügbar",
+  "titleVocabularySettings": "Vokabeleinstellungen",
+  "labelLanguageGerman": "Deutsch",
+  "labelLanguageEnglish": "Englisch",
+  "labelLanguageDanish": "Dänisch",
+  "labelSourceLanguage": "Quellsprache",
+  "labelTargetLanguage": "Zielsprache",
+  "labelDarkMode": "Dunkler Modus",
+  "titleVocabularyQuiz": "Vokabelquiz ({category})",
+  "titleVocabularyLearning": "Vokabeln lernen ({category})"
 }

@@ -1,21 +1,23 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import VocabularyScreen from '@screens/VocabularyScreen';
+import VocabularyScreen from '@/screens/vocabularyScreen/VocabularyScreen';
 import type { RootTabParamList } from '@lib/types/navigation';
 import SettingsScreen from '@/screens/SettingsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import CurrencyConversionScreen from '@/screens/CurrencyConversionScreen';
 import { ShoppingListScreen } from '@/screens/shoppingList/ShoppingListScreen';
+import { useLocalization } from '@/hooks/useLocalization';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export default function AppNavigator() {
   const { appTheme } = useSettingsContext();
+  const { getResource } = useLocalization();
 
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShown: true,
+        headerShown: false,
         tabBarActiveTintColor: '#007AFF',
         tabBarInactiveTintColor: appTheme.text.secondary,
         tabBarStyle: {
@@ -50,22 +52,34 @@ export default function AppNavigator() {
       <Tab.Screen
         name="CurrencyConversion"
         component={CurrencyConversionScreen}
-        options={{ headerShown: false, tabBarLabel: 'Rechner' }}
+        options={{
+          headerShown: false,
+          tabBarLabel: getResource('titleCurrencyCalculator'),
+        }}
       />
       <Tab.Screen
         name="ShoppingList"
         component={ShoppingListScreen}
-        options={{ headerShown: false, tabBarLabel: 'Einkaufsliste' }}
+        options={{
+          headerShown: false,
+          tabBarLabel: getResource('titleShoppingLists'),
+        }}
       />
       <Tab.Screen
         name="Vocabulary"
         component={VocabularyScreen}
-        options={{ headerShown: false, tabBarLabel: 'Vokabeln' }}
+        options={{
+          headerShown: false,
+          tabBarLabel: getResource('titleVocabulary'),
+        }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingsScreen}
-        options={{ headerShown: false, tabBarLabel: 'Einstellungen' }}
+        options={{
+          headerShown: false,
+          tabBarLabel: getResource('titleSettings'),
+        }}
       />
     </Tab.Navigator>
   );
