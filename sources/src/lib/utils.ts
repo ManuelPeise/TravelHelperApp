@@ -42,7 +42,7 @@ export const utils = {
       case LanguageEnum.ENGLISH:
         return callback ? callback('labelLanguageEnglish') : 'en';
       case LanguageEnum.DANISH:
-        return callback ? callback('labelLanguageDanish') : 'da';
+        return callback ? callback('labelLanguageDanish') : 'dk';
       default:
         return '';
     }
@@ -55,7 +55,7 @@ export const utils = {
         return LanguageEnum.ENGLISH;
       case 'Dänisch':
         return LanguageEnum.DANISH;
-      case 'Getrman':
+      case 'German':
         return LanguageEnum.GERMAN;
       case 'English':
         return LanguageEnum.ENGLISH;

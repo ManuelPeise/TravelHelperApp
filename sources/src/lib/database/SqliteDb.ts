@@ -67,28 +67,18 @@ const initializeDatabase = async (): Promise<void> => {
       id       INTEGER PRIMARY KEY AUTOINCREMENT,
       group_id INTEGER NOT NULL,
       word     TEXT NOT NULL,
+      phonetic TEXT,
       lang     TEXT NOT NULL,
-      category    TEXT,
+      category TEXT,
       FOREIGN KEY (group_id) REFERENCES vocabulary_group(id)
     );`,
   );
 
-  await db.executeSql(
-    `CREATE TABLE IF NOT EXISTS vocabulary_group (
-      id INTEGER PRIMARY KEY AUTOINCREMENT
-    );`,
-  );
-
-  await db.executeSql(
-    `CREATE TABLE IF NOT EXISTS vocabulary_word (
-      id       INTEGER PRIMARY KEY AUTOINCREMENT,
-      group_id INTEGER NOT NULL,
-      word     TEXT NOT NULL,
-      lang     TEXT NOT NULL,
-      topic    TEXT,
-      FOREIGN KEY (group_id) REFERENCES vocabulary_group(id)
-    );`,
-  );
+  try {
+    await db.executeSql('ALTER TABLE vocabulary_word ADD COLUMN phonetic TEXT');
+  } catch {
+    // column already exists
+  }
 
   const [settingsResult] = await db.executeSql(
     'SELECT COUNT(*) as count FROM settings',
@@ -107,4 +97,17 @@ const initializeDatabase = async (): Promise<void> => {
   }
 };
 
-export { getDatabase, initializeDatabase };
+const dropDatabase = async (): Promise<void> => {
+  const db = await getDatabase();
+
+  if (!db) {
+    return;
+  }
+  await db.close();
+  _db = null;
+  await SQLite.deleteDatabase({ name: DB_NAME, location: 'default' });
+  await initializeDatabase();
+  _db = await getDatabase();
+};
+
+export { getDatabase, initializeDatabase, dropDatabase };

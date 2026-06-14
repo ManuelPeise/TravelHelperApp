@@ -14,7 +14,7 @@ export type ShoppingListStackParamList = {
 
 export type VocabularyStackParamList = {
   VocabularyOverview: undefined;
-  VocabularyLearning: {
+  VocabularyView: {
     category: string;
     vocabularySettings: VocabularySettings;
   };

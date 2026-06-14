@@ -1,5 +1,5 @@
 import { Settings } from '../types/Settings';
-import { getDatabase } from './SqliteDb';
+import { dropDatabase, getDatabase, initializeDatabase } from './SqliteDb';
 
 const getSettingsFromDb = async (id: number = 1): Promise<Settings> => {
   const db = await getDatabase();
@@ -15,6 +15,11 @@ const getSettingsFromDb = async (id: number = 1): Promise<Settings> => {
     targetCurrency: settings.targetCurrency,
     theme: settings.theme,
   };
+};
+
+const resetDatabase = async (): Promise<void> => {
+  await dropDatabase();
+  await initializeDatabase();
 };
 
 const saveOrUpdateSettings = async (
@@ -36,4 +41,4 @@ const saveOrUpdateSettings = async (
   }
 };
 
-export { getSettingsFromDb, saveOrUpdateSettings };
+export { getSettingsFromDb, saveOrUpdateSettings, resetDatabase };

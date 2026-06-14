@@ -32,7 +32,7 @@
   "placeholderEnterShoppingListName": "Geben Sie den Namen der Einkaufsliste ein",
   "placeholderQuantity": "Menge",
   "placeholderSearchProduct": "Produkt suchen…",
-  "titleAddSchoppingList": "Einkaufsliste hinzufügen",
+  "titleAddShoppingList": "Einkaufsliste hinzufügen",
   "titleAvailableShoppingLists": "Verfügbare Einkaufslisten",
   "titleDeleteShoppingList": "Einkaufsliste löschen",
   "titleSettings": "Einstellungen",
@@ -50,5 +50,7 @@
   "labelTargetLanguage": "Zielsprache",
   "labelDarkMode": "Dunkler Modus",
   "titleVocabularyQuiz": "Vokabelquiz ({category})",
-  "titleVocabularyLearning": "Vokabeln lernen ({category})"
+  "titleViewVocabulary": "Vokabeln ansehen ({category})",
+  "labelResetDatabase": "Datenbank zurücksetzen.\nAlle Daten gehen verloren!",
+  "labelReset": "Zurücksetzen"
 }

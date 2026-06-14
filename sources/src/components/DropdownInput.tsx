@@ -40,7 +40,7 @@ const DropdownInput: React.FC<DropdownInputProps> = props => {
         onPress={() => setOpen(true)}
         activeOpacity={0.7}
       >
-        <Text style={[styles.triggerLabel, { color: appTheme.text.secondary }]}>
+        <Text style={[styles.triggerLabel, { color: appTheme.text.primary }]}>
           {label}
         </Text>
         <View style={styles.triggerRight}>
@@ -80,7 +80,7 @@ const DropdownInput: React.FC<DropdownInputProps> = props => {
           >
             <View style={styles.header}>
               <Text
-                style={[styles.headerLabel, { color: appTheme.text.secondary }]}
+                style={[styles.headerLabel, { color: appTheme.text.primary }]}
               >
                 {label}
               </Text>
@@ -88,7 +88,7 @@ const DropdownInput: React.FC<DropdownInputProps> = props => {
                 <Ionicons
                   name="close"
                   size={22}
-                  color={appTheme.text.secondary}
+                  color={appTheme.text.primary}
                 />
               </TouchableOpacity>
             </View>

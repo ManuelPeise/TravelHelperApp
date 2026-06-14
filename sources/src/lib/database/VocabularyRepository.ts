@@ -22,14 +22,20 @@ const importWordList = async (words: VocabularyWord[]): Promise<void> => {
     const groupId: number = groupResult.insertId;
 
     await db.executeSql(
-      'INSERT INTO vocabulary_word (group_id, word, lang, category) VALUES (?, ?, ?, ?)',
-      [groupId, entry.word, entry.lang, entry.category ?? null],
+      'INSERT INTO vocabulary_word (group_id, word, phonetic, lang, category) VALUES (?, ?, ?, ?, ?)',
+      [groupId, entry.word, entry.phonetic, entry.lang, entry.category ?? null],
     );
 
     for (const translation of entry.translations) {
       await db.executeSql(
-        'INSERT INTO vocabulary_word (group_id, word, lang, category) VALUES (?, ?, ?, ?)',
-        [groupId, translation.word, translation.lang, translation.category],
+        'INSERT INTO vocabulary_word (group_id, word, phonetic, lang, category) VALUES (?, ?, ?, ?, ?)',
+        [
+          groupId,
+          translation.word,
+          translation.phonetic,
+          translation.lang,
+          translation.category,
+        ],
       );
     }
   }
@@ -65,6 +71,7 @@ const getVocabulariesFromDb = async (
         id: t.id,
         fk_groupId: t.group_id,
         word: t.word,
+        phonetic: t.phonetic,
         lang: t.lang,
         category: t.category,
       });
@@ -72,6 +79,7 @@ const getVocabulariesFromDb = async (
 
     words.push({
       word: row.word,
+      phonetic: row.phonetic,
       lang: row.lang,
       category: row.category,
       groupId: row.group_id,
@@ -102,12 +110,14 @@ const getWordsByLang = async (lang: string): Promise<VocabularyWord[]> => {
         id: t.id,
         fk_groupId: t.group_id,
         word: t.word,
+        phonetic: t.phonetic,
         lang: t.lang,
         category: t.category,
       });
     }
     words.push({
       word: row.word,
+      phonetic: row.phonetic,
       lang: row.lang,
       category: row.category,
       translations,
@@ -142,12 +152,14 @@ const searchWords = async (
         id: t.id,
         fk_groupId: t.group_id,
         word: t.word,
+        phonetic: t.phonetic,
         lang: t.lang,
         category: t.category,
       });
     }
     words.push({
       word: row.word,
+      phonetic: row.phonetic,
       lang: row.lang,
       category: row.category,
       translations,

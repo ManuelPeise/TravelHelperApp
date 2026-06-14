@@ -7,7 +7,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import VocabularyOverviewScreen from './VocabularyOverviewScreen';
 import VocabularyQuizScreen from './VocabularyQuizScreen';
-import VocabularyLearningScreen from './VocabularyLearningScreen';
+import VocabularyViewScreen from './VocabularyViewScreen';
 
 const Stack = createNativeStackNavigator<VocabularyStackParamList>();
 
@@ -93,10 +93,10 @@ const VocabularyScreen: React.FC = () => {
         }}
       />
       <Stack.Screen
-        name="VocabularyLearning"
-        component={VocabularyLearningScreen}
+        name="VocabularyView"
+        component={VocabularyViewScreen}
         options={({ route }) => ({
-          title: getResource('titleVocabularyLearning').replace(
+          title: getResource('titleViewVocabulary').replace(
             '{category}',
             route.params.category,
           ),

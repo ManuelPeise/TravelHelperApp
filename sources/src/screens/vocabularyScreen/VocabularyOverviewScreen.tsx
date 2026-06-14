@@ -33,7 +33,7 @@ type VocabularyOverviewScreenModel = {
 const VocabularyOverviewScreen: React.FC<Props> = props => {
   const { navigation } = props;
   const { appTheme } = useSettingsContext();
-
+  const { getResource } = useLocalization();
   const { storageModel, setItem } = useStorage<VocabularySettings>(
     StorageKeyEnum.VocabularySettings,
     {
@@ -42,8 +42,6 @@ const VocabularyOverviewScreen: React.FC<Props> = props => {
     },
   );
 
-  const { getResource } = useLocalization();
-
   const [model, setModel] = React.useState<VocabularyOverviewScreenModel>({
     open: false,
     settings: storageModel,
@@ -51,10 +49,10 @@ const VocabularyOverviewScreen: React.FC<Props> = props => {
 
   const vocabularyImport = useVocabularyImport();
 
-  const vocabulary = useVocabulary([
+  const vocabulary = useVocabulary(
     model.settings.sourceLanguage,
     model.settings.targetLanguage,
-  ]);
+  );
 
   const settingsButtonDisabled = React.useMemo(() => {
     return (
@@ -63,6 +61,14 @@ const VocabularyOverviewScreen: React.FC<Props> = props => {
       vocabulary.vocabularyCategories.length === 0
     );
   }, [vocabulary, vocabularyImport]);
+
+  const handleVocabularyImport = React.useCallback(async () => {
+    await vocabularyImport.importFile();
+    await vocabulary.onLoadVocabularies([
+      storageModel.sourceLanguage,
+      storageModel.targetLanguage,
+    ]);
+  }, [vocabularyImport, vocabulary, storageModel]);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -84,7 +90,7 @@ const VocabularyOverviewScreen: React.FC<Props> = props => {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={vocabularyImport.pickVocabularyFile}
+            onPress={handleVocabularyImport}
             style={styles.headerButton}
           >
             <Ionicons
@@ -153,7 +159,7 @@ const VocabularyOverviewScreen: React.FC<Props> = props => {
             <View style={styles.rowActions}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('VocabularyLearning', {
+                  navigation.navigate('VocabularyView', {
                     category: item.name,
                     vocabularySettings: model.settings,
                   });
