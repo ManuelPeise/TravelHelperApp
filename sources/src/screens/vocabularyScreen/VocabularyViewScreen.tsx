@@ -3,7 +3,7 @@ import { useVocabulary } from '@/hooks/useVocabulary';
 import { VocabularyStackParamList } from '@/lib/types/navigation';
 import { NativeStackScreenProps } from 'node_modules/@react-navigation/native-stack/lib/typescript/src/types';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import VocabularyView from './components/VocabularyView';
 
 type Props = NativeStackScreenProps<VocabularyStackParamList, 'VocabularyView'>;

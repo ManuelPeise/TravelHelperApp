@@ -40,7 +40,7 @@ export const useStorage = <TModel>(key: StorageKeyEnum, fallback: TModel) => {
       await onLoad();
     };
     loadData();
-  }, [key]);
+  }, [key, onLoad]);
 
   return {
     storageModel: model,

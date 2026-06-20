@@ -9,7 +9,6 @@ import {
   mapProductCategoryToResource,
   ProductCategoryResourceEnum,
 } from '@/lib/enums/ProductCategoryResourceEnum';
-import { Product } from '@/lib/types/Product';
 import React from 'react';
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 

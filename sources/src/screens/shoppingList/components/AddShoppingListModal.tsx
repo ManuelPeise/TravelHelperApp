@@ -33,7 +33,7 @@ const AddShoppingListModal: React.FC<IProps> = props => {
   const handleAddClick = React.useCallback(() => {
     onAdd(values.name);
     resetForm();
-  }, [onAdd, values.name, values.date, resetForm]);
+  }, [onAdd, values.name, resetForm]);
 
   return (
     <Modal

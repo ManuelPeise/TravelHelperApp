@@ -1,12 +1,6 @@
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import React from 'react';
-import {
-  StyleSheet,
-  TextInput,
-  TextInputProps,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface NumberInputProps {
@@ -46,7 +40,7 @@ const NumberInput: React.FC<NumberInputProps> = props => {
         setDisplayValue(value != null ? value : '');
       }
     }
-  }, [value, focused]);
+  }, [value, focused, displayValue]);
 
   const handleChange = React.useCallback(
     (text: string) => {

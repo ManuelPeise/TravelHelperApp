@@ -52,5 +52,10 @@
   "titleVocabularyQuiz": "Vokabelquiz ({category})",
   "titleViewVocabulary": "Vokabeln ansehen ({category})",
   "labelResetDatabase": "Datenbank zurücksetzen.\nAlle Daten gehen verloren!",
-  "labelReset": "Zurücksetzen"
+  "labelReset": "Zurücksetzen",
+  "labelOK": "OK",
+  "titleCorrectAnswer": "Richtige Antwort!",
+  "titleWrongAnswer": "Falsche Antwort!",
+  "titleQuizResult": "Quiz-Ergebnis",
+  "labelYourScore": "Du hast {score} von {total} Fragen richtig beantwortet."
 }

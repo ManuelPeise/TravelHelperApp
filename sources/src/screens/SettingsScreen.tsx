@@ -26,7 +26,7 @@ const SettingsScreen: React.FC = () => {
       handleChange(field, value);
       saveOrUpdateSettings({ ...values, [field]: value });
     },
-    [saveOrUpdateSettings, values],
+    [saveOrUpdateSettings, values, handleChange],
   );
 
   const handleResetDatabase = React.useCallback(() => {

@@ -102,7 +102,13 @@ const VocabularyOverviewScreen: React.FC<Props> = props => {
         </View>
       ),
     });
-  }, [navigation, vocabularyImport, appTheme, settingsButtonDisabled]);
+  }, [
+    navigation,
+    vocabularyImport,
+    appTheme,
+    settingsButtonDisabled,
+    handleVocabularyImport,
+  ]);
 
   const getWordCountText = React.useCallback(
     (count: number): string => {

@@ -36,7 +36,7 @@ const CurrencyConversionScreen: React.FC = () => {
       values.fromCurrency,
       values.toCurrency,
     ).toFixed(2);
-  }, [values, onSourceAmountChange]);
+  }, [values, isModified, onSourceAmountChange]);
 
   const handleSourceCurrencyChange = React.useCallback(
     (currency: string) => {

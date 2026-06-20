@@ -22,7 +22,6 @@ const TextInputField: React.FC<IProps> = props => {
   } = props;
   const { appTheme } = useSettingsContext();
 
-  const [focused, setFocused] = React.useState(false);
   return (
     <View
       style={[
@@ -43,8 +42,6 @@ const TextInputField: React.FC<IProps> = props => {
         onChangeText={onChange}
         placeholder={placeholder}
         editable={!disabled}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
         placeholderTextColor={placeholderTextColor ?? appTheme.text.disabled}
       />
     </View>

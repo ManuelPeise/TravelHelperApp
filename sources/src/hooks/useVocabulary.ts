@@ -4,6 +4,13 @@ import { VocabularyWord } from '@/lib/types/vocabulary/VocabularyWord';
 import { utils } from '@/lib/utils';
 import React from 'react';
 
+export type VocabularyQuizOptions = {
+  word: string;
+  phonetic: string;
+  lang: LanguageEnum;
+  isCorrect: boolean;
+};
+
 type VocabularyWordItem = {
   groupId: number;
   word: string;
@@ -25,6 +32,13 @@ export type VocabularyViewItem = {
   translation: string;
   targetPhonetic?: string;
   targetLanguage: LanguageEnum;
+};
+
+export type VocabularyQuizItem = {
+  category: string;
+  word: string;
+  phonetic: string;
+  options: VocabularyQuizOptions[];
 };
 
 export const useVocabulary = (
@@ -113,7 +127,6 @@ export const useVocabulary = (
 
     const selectedWords = wordList.filter(w => w.lang === sourceLanguage);
 
-    console.log('selectedWords', selectedWords);
     const mappedViewItems: VocabularyViewItem[] = [];
 
     selectedWords.forEach(word => {
@@ -142,6 +155,126 @@ export const useVocabulary = (
     return mappedViewItems;
   }, [vocabularies, sourceLanguage, targetLanguage]);
 
+  const getOptions = React.useCallback(
+    (
+      wordList: VocabularyWordItem[],
+      correctTranslation: VocabularyWordItem,
+      incorrectCount: number = 3,
+    ): VocabularyQuizOptions[] => {
+      const correctWordFromWordList = wordList.find(
+        word =>
+          word.word === correctTranslation.word &&
+          word.lang === correctTranslation.lang,
+      ) as VocabularyWordItem;
+
+      const correctOption: VocabularyQuizOptions = {
+        word: correctWordFromWordList.word,
+        phonetic: correctWordFromWordList.phonetic ?? '',
+        lang: correctWordFromWordList.lang,
+        isCorrect: true,
+      };
+
+      const options: VocabularyQuizOptions[] = [];
+
+      const filteredWordList = wordList.filter(
+        word =>
+          word.word !== correctTranslation.word ||
+          word.lang !== correctTranslation.lang,
+      );
+
+      for (const word of filteredWordList) {
+        const wordsInList = options.map(option => option.word);
+
+        if (!wordsInList.includes(word.word)) {
+          options.push({
+            word: word.word,
+            phonetic: word.phonetic ?? '',
+            lang: word.lang,
+            isCorrect: false,
+          });
+        }
+      }
+
+      const incorrectOptions = utils
+        .shuffleArray(options)
+        .slice(0, incorrectCount - 1);
+
+      const finalOptions = utils.shuffleArray([
+        ...incorrectOptions,
+        correctOption,
+      ]);
+
+      return finalOptions;
+    },
+    [],
+  );
+
+  const vocabularyQuizItems = React.useMemo((): VocabularyQuizItem[] => {
+    if (!vocabularies) {
+      return [];
+    }
+
+    const wordList: VocabularyWordItem[] = [];
+
+    vocabularies.forEach(vocab => {
+      wordList.push({
+        groupId: vocab.groupId ?? 0,
+        word: vocab.word,
+        phonetic: vocab.phonetic,
+        category: vocab.category,
+        lang: vocab.lang as LanguageEnum,
+      });
+
+      vocab.translations.forEach(translation => {
+        wordList.push({
+          groupId: vocab.groupId ?? 0,
+          word: translation.word,
+          phonetic: translation.phonetic,
+          category: vocab.category,
+          lang: translation.lang as LanguageEnum,
+        });
+      });
+    });
+
+    const selectedWords = wordList.filter(w => w.lang === sourceLanguage);
+
+    const quizItems: VocabularyQuizItem[] = [];
+
+    selectedWords.forEach(word => {
+      const translation = wordList.find(
+        w => w.groupId === word.groupId && w.lang === targetLanguage,
+      );
+
+      const item: VocabularyQuizItem = {
+        category: word.category,
+        word: word.word,
+        phonetic: word.phonetic ?? '',
+        options: [],
+      };
+
+      if (translation) {
+        item.options.push({
+          word: translation.word,
+          phonetic: translation.phonetic ?? '',
+          lang: translation.lang,
+          isCorrect: true,
+        });
+
+        const options = getOptions(
+          wordList.filter(w => w.lang === targetLanguage),
+          translation,
+        );
+
+        item.options = options;
+      }
+
+      if (item.options.length > 1) {
+        quizItems.push(item);
+      }
+    });
+    return quizItems;
+  }, [getOptions, sourceLanguage, targetLanguage, vocabularies]);
+
   React.useEffect(() => {
     if (sourceLanguage && targetLanguage) {
       onLoadVocabularies([sourceLanguage, targetLanguage]);
@@ -156,5 +289,6 @@ export const useVocabulary = (
     vocabularyCategories,
     vocabularyViewItems,
     onLoadVocabularies,
+    vocabularyQuizItems,
   };
 };

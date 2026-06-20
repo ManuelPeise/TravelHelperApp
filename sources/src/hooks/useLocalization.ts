@@ -15,7 +15,7 @@ export const useLocalization = () => {
     (lng: string) => {
       i18n.changeLanguage(lng);
     },
-    [i18n.changeLanguage],
+    [i18n],
   );
 
   return { getResource, changeLanguage };

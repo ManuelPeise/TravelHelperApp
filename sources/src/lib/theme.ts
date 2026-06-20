@@ -12,6 +12,7 @@ export type AppTheme = {
     disabled: string;
   };
   border: string;
+  success: string;
 };
 
 export const lightTheme: AppTheme = {
@@ -28,6 +29,7 @@ export const lightTheme: AppTheme = {
     disabled: '#AAAAAA',
   },
   border: '#E5E5E5',
+  success: '#4CAF50',
 };
 
 export const darkTheme: AppTheme = {
@@ -44,4 +46,5 @@ export const darkTheme: AppTheme = {
     disabled: '#555555',
   },
   border: '#333333',
+  success: '#4CAF50',
 };
