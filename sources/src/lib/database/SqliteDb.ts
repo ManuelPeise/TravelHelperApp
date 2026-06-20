@@ -74,11 +74,46 @@ const initializeDatabase = async (): Promise<void> => {
     );`,
   );
 
-  try {
-    await db.executeSql('ALTER TABLE vocabulary_word ADD COLUMN phonetic TEXT');
-  } catch {
-    // column already exists
-  }
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS packing_lists (
+        id TEXT PRIMARY KEY NOT NULL,
+        title TEXT NOT NULL
+      );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS packing_people (
+        id TEXT PRIMARY KEY NOT NULL,
+        name TEXT NOT NULL,
+        list_id TEXT NOT NULL,
+        FOREIGN KEY (list_id) REFERENCES packing_lists (id)
+      );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS packing_categories (
+        id TEXT PRIMARY KEY NOT NULL,
+        name TEXT NOT NULL,
+        person_id TEXT NOT NULL,
+        FOREIGN KEY (person_id) REFERENCES packing_people (id)
+      );`,
+  );
+
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS packing_items (
+        id TEXT PRIMARY KEY NOT NULL,
+        name TEXT NOT NULL,
+        checked INTEGER NOT NULL DEFAULT 0,
+        category_id TEXT NOT NULL,
+        FOREIGN KEY (category_id) REFERENCES packing_categories (id)
+      );`,
+  );
+
+  // try {
+  //   await db.executeSql('ALTER TABLE vocabulary_word ADD COLUMN phonetic TEXT');
+  // } catch {
+  //   // column already exists
+  // }
 
   const [settingsResult] = await db.executeSql(
     'SELECT COUNT(*) as count FROM settings',
