@@ -1,6 +1,7 @@
 import SQLite, { type SQLiteDatabase } from 'react-native-sqlite-storage';
 import { saveOrUpdateSettings } from './SettingsRepository';
 import { CurrencyEnum } from '../enums/CurrencyEnum';
+import { LanguageEnum } from '../enums/LanguageEnum';
 
 SQLite.enablePromise(true);
 
@@ -20,9 +21,10 @@ const initializeDatabase = async (): Promise<void> => {
 
   await db.executeSql(
     `CREATE TABLE IF NOT EXISTS settings (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      id INTEGER PRIMARY KEY CHECK (id = 1),
       sourceCurrency TEXT NOT NULL,
       targetCurrency TEXT NOT NULL,
+      language TEXT NOT NULL,
       theme TEXT NOT NULL
     );`,
   );
@@ -51,8 +53,8 @@ const initializeDatabase = async (): Promise<void> => {
       quantity REAL NOT NULL DEFAULT 1,
       price REAL NOT NULL DEFAULT 0,
       completed INTEGER NOT NULL DEFAULT 0,
-      FOREIGN KEY (fk_shoppingId) REFERENCES shopping(id),
-      FOREIGN KEY (fk_productId) REFERENCES product(id)
+      FOREIGN KEY (fk_shoppingId) REFERENCES shopping(id) ON DELETE CASCADE,
+      FOREIGN KEY (fk_productId) REFERENCES product(id) ON DELETE CASCADE
     );`,
   );
 
@@ -70,50 +72,58 @@ const initializeDatabase = async (): Promise<void> => {
       phonetic TEXT,
       lang     TEXT NOT NULL,
       category TEXT,
-      FOREIGN KEY (group_id) REFERENCES vocabulary_group(id)
+      FOREIGN KEY (group_id) REFERENCES vocabulary_group(id) ON DELETE CASCADE
     );`,
   );
 
   await db.executeSql(
     `CREATE TABLE IF NOT EXISTS packing_lists (
-        id TEXT PRIMARY KEY NOT NULL,
-        title TEXT NOT NULL
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        subTitle TEXT,
+        dateCreated TEXT NOT NULL
       );`,
   );
 
   await db.executeSql(
     `CREATE TABLE IF NOT EXISTS packing_people (
-        id TEXT PRIMARY KEY NOT NULL,
-        name TEXT NOT NULL,
-        list_id TEXT NOT NULL,
-        FOREIGN KEY (list_id) REFERENCES packing_lists (id)
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL UNIQUE
       );`,
   );
 
   await db.executeSql(
-    `CREATE TABLE IF NOT EXISTS packing_categories (
-        id TEXT PRIMARY KEY NOT NULL,
-        name TEXT NOT NULL,
-        person_id TEXT NOT NULL,
-        FOREIGN KEY (person_id) REFERENCES packing_people (id)
-      );`,
+    `CREATE TABLE IF NOT EXISTS packing_list_person (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  personId INTEGER NOT NULL,
+  listId INTEGER NOT NULL,
+  UNIQUE (personId, listId),
+  FOREIGN KEY (personId) REFERENCES packing_people(id) ON DELETE CASCADE,
+  FOREIGN KEY (listId) REFERENCES packing_lists(id) ON DELETE CASCADE
+);`,
   );
 
   await db.executeSql(
     `CREATE TABLE IF NOT EXISTS packing_items (
-        id TEXT PRIMARY KEY NOT NULL,
-        name TEXT NOT NULL,
-        checked INTEGER NOT NULL DEFAULT 0,
-        category_id TEXT NOT NULL,
-        FOREIGN KEY (category_id) REFERENCES packing_categories (id)
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL UNIQUE
       );`,
   );
 
-  // try {
-  //   await db.executeSql('ALTER TABLE vocabulary_word ADD COLUMN phonetic TEXT');
-  // } catch {
-  //   // column already exists
-  // }
+  await db.executeSql(
+    `CREATE TABLE IF NOT EXISTS packing_personal_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        listId INTEGER NOT NULL,
+        personId INTEGER NOT NULL,
+        itemId INTEGER NOT NULL,
+        count INTEGER NOT NULL DEFAULT 1,
+        checked INTEGER NOT NULL DEFAULT 0,
+        UNIQUE (listId, personId, itemId),
+        FOREIGN KEY (listId) REFERENCES packing_lists (id) ON DELETE CASCADE,
+        FOREIGN KEY (personId) REFERENCES packing_people (id) ON DELETE CASCADE,
+        FOREIGN KEY (itemId) REFERENCES packing_items (id) ON DELETE CASCADE
+      );`,
+  );
 
   const [settingsResult] = await db.executeSql(
     'SELECT COUNT(*) as count FROM settings',
@@ -125,6 +135,7 @@ const initializeDatabase = async (): Promise<void> => {
       {
         sourceCurrency: CurrencyEnum.EUR,
         targetCurrency: CurrencyEnum.DKK,
+        language: LanguageEnum.ENGLISH,
         theme: 'dark',
       },
       false,
@@ -135,9 +146,6 @@ const initializeDatabase = async (): Promise<void> => {
 const dropDatabase = async (): Promise<void> => {
   const db = await getDatabase();
 
-  if (!db) {
-    return;
-  }
   await db.close();
   _db = null;
   await SQLite.deleteDatabase({ name: DB_NAME, location: 'default' });

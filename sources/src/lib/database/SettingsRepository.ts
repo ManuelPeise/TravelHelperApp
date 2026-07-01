@@ -13,6 +13,7 @@ const getSettingsFromDb = async (id: number = 1): Promise<Settings> => {
     id: settings.id,
     sourceCurrency: settings.sourceCurrency,
     targetCurrency: settings.targetCurrency,
+    language: settings.language,
     theme: settings.theme,
   };
 };
@@ -30,13 +31,23 @@ const saveOrUpdateSettings = async (
 
   if (updateExisting) {
     await db.executeSql(
-      'INSERT OR REPLACE INTO settings (id, sourceCurrency, targetCurrency, theme) VALUES (1, ?, ?, ?)',
-      [settings.sourceCurrency, settings.targetCurrency, settings.theme],
+      'INSERT OR REPLACE INTO settings (id, sourceCurrency, targetCurrency, language, theme) VALUES (1, ?, ?, ?, ?)',
+      [
+        settings.sourceCurrency,
+        settings.targetCurrency,
+        settings.language,
+        settings.theme,
+      ],
     );
   } else {
     await db.executeSql(
-      'INSERT INTO settings (sourceCurrency, targetCurrency, theme) VALUES (?, ?, ?)',
-      [settings.sourceCurrency, settings.targetCurrency, settings.theme],
+      'INSERT INTO settings (sourceCurrency, targetCurrency, language, theme) VALUES (?, ?, ?, ?)',
+      [
+        settings.sourceCurrency,
+        settings.targetCurrency,
+        settings.language,
+        settings.theme,
+      ],
     );
   }
 };

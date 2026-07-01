@@ -7,7 +7,6 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useForm } from '@/hooks/useForm';
 import { CurrencyConversionFormModel } from '@/lib/types/CurrencyConversionFormModel';
 import { useLocalization } from '@/hooks/useLocalization';
-
 const CurrencyConversionScreen: React.FC = () => {
   const { appTheme, settings } = useSettingsContext();
   const { getResource } = useLocalization();
@@ -56,49 +55,31 @@ const CurrencyConversionScreen: React.FC = () => {
 
   return (
     <View
-      style={{
-        flex: 1,
-        width: '100%',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        backgroundColor: appTheme.background.primary,
-        gap: 10,
-      }}
+      style={[
+        styles.container,
+        { backgroundColor: appTheme.background.primary },
+      ]}
     >
       <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
+        style={[
+          styles.descriptionCard,
+          { backgroundColor: appTheme.background.primary },
+        ]}
       >
-        <Text
-          style={{
-            color: appTheme.text.secondary,
-            fontSize: 20,
-            fontWeight: 'bold',
-          }}
-        >
-          {getResource('titleCurrencyCalculator')}
-        </Text>
-        <Text style={{ color: appTheme.text.secondary, marginTop: 12 }}>
+        <Text style={[styles.description, { color: appTheme.text.secondary }]}>
           {getResource('labelCurrencyCalculatorDescription')}
         </Text>
       </View>
       <View
-        style={{
-          backgroundColor: appTheme.card,
-          width: '100%',
-          flex: 1,
-          borderRadius: 8,
-          padding: 20,
-        }}
+        style={[
+          styles.formCard,
+          { backgroundColor: appTheme.background.primary },
+        ]}
       >
         <View
           style={[
             styles.calculatorContainer,
-            { backgroundColor: appTheme.card },
+            { backgroundColor: appTheme.background.primary },
           ]}
         >
           <DropdownInput
@@ -131,11 +112,7 @@ const CurrencyConversionScreen: React.FC = () => {
             calculatedRate !== null && (
               <View style={styles.calculatorResultContainer}>
                 <Text
-                  style={{
-                    color: appTheme.text.primary,
-                    fontSize: 18,
-                    fontWeight: 'bold',
-                  }}
+                  style={[styles.resultText, { color: appTheme.text.primary }]}
                 >
                   {`${fromAmount?.toFixed(2)} ${
                     values.fromCurrency
@@ -152,12 +129,23 @@ const CurrencyConversionScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    justifyContent: 'center',
+    gap: 10,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+  descriptionCard: {
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 38,
+  },
+  description: {
+    marginTop: 4,
+  },
+  formCard: {
+    width: '100%',
+    flex: 1,
+    padding: 20,
   },
   calculatorContainer: {
     flex: 1,
@@ -165,15 +153,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 20,
     width: '100%',
-    backgroundColor: '#fff',
     borderRadius: 8,
-    // marginTop: 20,
   },
   calculatorResultContainer: {
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  resultText: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 

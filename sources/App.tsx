@@ -15,7 +15,6 @@ const App: React.FC = () => {
     initializeDatabase()
       .then(() => {
         setDbReady(true);
-        console.log('Database initialized successfully');
       })
       .catch(console.error);
   }, []);

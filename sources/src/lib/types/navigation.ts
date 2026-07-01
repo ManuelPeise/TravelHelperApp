@@ -5,6 +5,7 @@ export type RootTabParamList = {
   Vocabulary: undefined;
   Settings: undefined;
   ShoppingList: undefined;
+  PackingList: undefined;
 };
 
 export type ShoppingListStackParamList = {
@@ -19,4 +20,9 @@ export type VocabularyStackParamList = {
     vocabularySettings: VocabularySettings;
   };
   VocabularyQuiz: { category: string; vocabularySettings: VocabularySettings };
+};
+
+export type PackingListStackParamList = {
+  PackingListOverview: undefined;
+  PackingListDetail: { packingListId: number };
 };

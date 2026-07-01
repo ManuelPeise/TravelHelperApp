@@ -13,6 +13,7 @@ export type AppTheme = {
   };
   border: string;
   success: string;
+  error: string;
 };
 
 export const lightTheme: AppTheme = {
@@ -30,6 +31,7 @@ export const lightTheme: AppTheme = {
   },
   border: '#E5E5E5',
   success: '#4CAF50',
+  error: '#FF3B30',
 };
 
 export const darkTheme: AppTheme = {
@@ -47,4 +49,5 @@ export const darkTheme: AppTheme = {
   },
   border: '#333333',
   success: '#4CAF50',
+  error: '#FF3B30',
 };

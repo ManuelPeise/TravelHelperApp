@@ -1,77 +1,13 @@
+import AppHeader from '@/components/AppHeader';
 import { useLocalization } from '@/hooks/useLocalization';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import { VocabularyStackParamList } from '@/lib/types/navigation';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import VocabularyOverviewScreen from './VocabularyOverviewScreen';
 import VocabularyQuizScreen from './VocabularyQuizScreen';
 import VocabularyViewScreen from './VocabularyViewScreen';
 
 const Stack = createNativeStackNavigator<VocabularyStackParamList>();
-
-const VocabularyHeader: React.FC<NativeStackHeaderProps> = ({
-  options,
-  navigation,
-  back,
-}) => {
-  const { appTheme } = useSettingsContext();
-
-  return (
-    <View
-      style={[
-        headerStyles.container,
-        { backgroundColor: appTheme.background.primary },
-      ]}
-    >
-      {back && (
-        <TouchableOpacity onPress={navigation.goBack} style={headerStyles.back}>
-          <Ionicons
-            name="chevron-back"
-            size={24}
-            color={appTheme.text.primary}
-          />
-        </TouchableOpacity>
-      )}
-      <Text
-        style={[headerStyles.title, { color: appTheme.text.primary }]}
-        numberOfLines={1}
-      >
-        {options.title ?? ''}
-      </Text>
-      {options.headerRight && (
-        <View style={headerStyles.right}>
-          {options.headerRight({ tintColor: appTheme.text.primary })}
-        </View>
-      )}
-    </View>
-  );
-};
-
-const headerStyles = StyleSheet.create({
-  container: {
-    width: '100%',
-    height: 48,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  back: {
-    marginRight: 8,
-  },
-  title: {
-    marginLeft: 20,
-    flex: 1,
-    fontSize: 20,
-    fontWeight: '600',
-  },
-  right: {
-    marginLeft: 8,
-  },
-});
 
 const VocabularyScreen: React.FC = () => {
   const { getResource } = useLocalization();
@@ -82,7 +18,7 @@ const VocabularyScreen: React.FC = () => {
       screenOptions={{
         headerTintColor: appTheme.text.primary,
         contentStyle: { backgroundColor: appTheme.background.primary },
-        header: props => <VocabularyHeader {...props} />,
+        header: props => <AppHeader {...props} />,
       }}
     >
       <Stack.Screen

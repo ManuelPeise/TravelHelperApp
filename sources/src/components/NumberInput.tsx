@@ -10,6 +10,7 @@ interface NumberInputProps {
   placeholderTextColor?: string;
   color?: string;
   hasClearButton?: boolean;
+  disabled?: boolean;
   onClear?: () => void;
 }
 
@@ -21,6 +22,7 @@ const NumberInput: React.FC<NumberInputProps> = props => {
     placeholderTextColor,
     color,
     hasClearButton,
+    disabled,
     onClear,
   } = props;
 
@@ -88,6 +90,7 @@ const NumberInput: React.FC<NumberInputProps> = props => {
           onChangeText={handleChange}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
+          editable={!disabled}
           placeholderTextColor={placeholderTextColor ?? appTheme.text.disabled}
         />
         {displayValue !== '' && (
@@ -129,6 +132,7 @@ const NumberInput: React.FC<NumberInputProps> = props => {
         onChangeText={handleChange}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
+        editable={!disabled}
         placeholderTextColor={placeholderTextColor ?? appTheme.text.disabled}
       />
     </View>

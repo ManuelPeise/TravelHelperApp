@@ -1,12 +1,6 @@
 export type PackingItem = {
-  id: string;
+  id: number;
   name: string;
+  count: number;
   checked: boolean;
-};
-
-export type DbPackingItem = {
-  id: string;
-  name: string;
-  checked: number;
-  category_id: string;
 };

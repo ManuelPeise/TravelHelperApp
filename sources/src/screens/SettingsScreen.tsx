@@ -1,32 +1,42 @@
 import DropdownInput from '@/components/DropdownInput';
-import SwitchComponent from '@/components/SwitchComponent';
 import { useForm } from '@/hooks/useForm';
 import { useLocalization } from '@/hooks/useLocalization';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
-import { SupportedCurrencies } from '@/lib/constants';
+import { SupportedCurrencies, SupportedLanguages } from '@/lib/constants';
 import { resetDatabase } from '@/lib/database/SettingsRepository';
 import { CurrencyEnum } from '@/lib/enums/CurrencyEnum';
+import { LanguageEnum } from '@/lib/enums/LanguageEnum';
 import { Settings } from '@/lib/types/Settings';
 import React from 'react';
-import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
+import {
+  ActivityIndicator,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const SettingsScreen: React.FC = () => {
   const { appTheme, settings, saveOrUpdateSettings } = useSettingsContext();
-  const { getResource } = useLocalization();
+  const { getResource, changeLanguage } = useLocalization();
   const [isLoading, setIsLoading] = React.useState(false);
   const { values, handleChange } = useForm<Settings>({
     id: 1,
     sourceCurrency: (settings?.sourceCurrency as CurrencyEnum) || null,
     targetCurrency: (settings?.targetCurrency as CurrencyEnum) || null,
-    theme: settings?.theme || 'system',
+    language: (settings?.language as LanguageEnum) || LanguageEnum.ENGLISH,
+    theme: settings?.theme || 'dark',
   });
 
   const handleSettingsChange = React.useCallback(
     (field: keyof Settings, value: any) => {
       handleChange(field, value);
       saveOrUpdateSettings({ ...values, [field]: value });
+      if (field === 'language') {
+        changeLanguage(value);
+      }
     },
-    [saveOrUpdateSettings, values, handleChange],
+    [saveOrUpdateSettings, values, handleChange, changeLanguage],
   );
 
   const handleResetDatabase = React.useCallback(() => {
@@ -43,43 +53,33 @@ const SettingsScreen: React.FC = () => {
 
   return (
     <View
-      style={{
-        flex: 1,
-        width: '100%',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        backgroundColor: appTheme.background.primary,
-        gap: 10,
-      }}
+      style={[
+        styles.container,
+        { backgroundColor: appTheme.background.primary },
+      ]}
     >
       <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
+        style={[
+          styles.descriptionCard,
+          { backgroundColor: appTheme.background.primary },
+        ]}
       >
-        <Text
-          style={{
-            color: appTheme.text.secondary,
-            fontSize: 20,
-            fontWeight: 'bold',
-          }}
-        >
-          {getResource('titleSettings')}
-        </Text>
-        <Text style={{ color: appTheme.text.secondary, marginTop: 12 }}>
-          {getResource('labelSettingsDescription')}
+        <Text style={[styles.description, { color: appTheme.text.secondary }]}>
+          {getResource('labelCurrencyCalculatorDescription')}
         </Text>
       </View>
       <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
+        style={[styles.card, { backgroundColor: appTheme.background.primary }]}
+      >
+        <DropdownInput
+          options={SupportedLanguages}
+          label={getResource('labelLanguage')}
+          value={values.language}
+          onValueChange={value => handleSettingsChange('language', value)}
+        />
+      </View>
+      <View
+        style={[styles.card, { backgroundColor: appTheme.background.primary }]}
       >
         <DropdownInput
           options={SupportedCurrencies}
@@ -89,12 +89,7 @@ const SettingsScreen: React.FC = () => {
         />
       </View>
       <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
+        style={[styles.card, { backgroundColor: appTheme.background.primary }]}
       >
         <DropdownInput
           options={SupportedCurrencies.filter(c => c !== values.sourceCurrency)}
@@ -104,64 +99,24 @@ const SettingsScreen: React.FC = () => {
         />
       </View>
       <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
+        style={[styles.card, { backgroundColor: appTheme.background.primary }]}
       >
-        <SwitchComponent
-          label={getResource('labelDarkMode')}
-          value={values.theme === 'dark'}
-          onValueChange={value =>
-            handleSettingsChange('theme', value ? 'dark' : 'light')
-          }
-        />
-      </View>
-      <View
-        style={{
-          width: '100%',
-          padding: 20,
-          backgroundColor: appTheme.card,
-          borderRadius: 0,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: 10,
-            justifyContent: 'space-between',
-            maxWidth: '100%',
-            paddingVertical: 12,
-            paddingHorizontal: 16,
-          }}
-        >
-          <Text
-            style={{
-              color: appTheme.text.primary,
-              fontSize: 16,
-              textAlign: 'left',
-              lineHeight: 20,
-            }}
-          >
+        <View style={styles.resetRow}>
+          <Text style={[styles.resetLabel, { color: appTheme.text.primary }]}>
             {getResource('labelResetDatabase')}
           </Text>
           <TouchableOpacity
             onPress={handleResetDatabase}
-            style={{
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-            }}
+            style={styles.resetButton}
           >
             <Text
-              style={{
-                backgroundColor: appTheme.background.accent,
-                color: appTheme.text.primary,
-                padding: 10,
-                borderRadius: 5,
-                textAlign: 'center',
-              }}
+              style={[
+                styles.resetButtonText,
+                {
+                  backgroundColor: appTheme.background.accent,
+                  color: appTheme.text.primary,
+                },
+              ]}
             >
               {getResource('labelReset')}
             </Text>
@@ -171,5 +126,48 @@ const SettingsScreen: React.FC = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    gap: 10,
+  },
+  card: {
+    width: '100%',
+    padding: 10,
+  },
+  descriptionCard: {
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 38,
+  },
+  description: {
+    marginTop: 4,
+  },
+  resetRow: {
+    flexDirection: 'row',
+    gap: 10,
+    justifyContent: 'space-between',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
+  resetLabel: {
+    fontSize: 16,
+    lineHeight: 20,
+    flex: 1,
+  },
+  resetButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  resetButtonText: {
+    padding: 10,
+    borderRadius: 5,
+    textAlign: 'center',
+  },
+});
 
 export default SettingsScreen;

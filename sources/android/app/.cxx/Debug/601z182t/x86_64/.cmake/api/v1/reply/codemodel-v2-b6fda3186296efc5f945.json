@@ -150,7 +150,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appmodules::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appmodules-Debug-97315cf37c9fccf209f3.json",
+					"jsonFile" : "target-appmodules-Debug-3faa6cd35fe40817acd9.json",
 					"name" : "appmodules",
 					"projectIndex" : 0
 				},
@@ -185,14 +185,14 @@
 				{
 					"directoryIndex" : 5,
 					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
-					"jsonFile" : "target-react_codegen_rnscreens-Debug-8a52aeedb864114be81a.json",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-0cd40ba8208d962d8f02.json",
 					"name" : "react_codegen_rnscreens",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
-					"jsonFile" : "target-react_codegen_safeareacontext-Debug-dd69de0bbdbbd29e5106.json",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-3765d30c63cfa688c537.json",
 					"name" : "react_codegen_safeareacontext",
 					"projectIndex" : 0
 				}
@@ -202,7 +202,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a",
+		"build" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64",
 		"source" : "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

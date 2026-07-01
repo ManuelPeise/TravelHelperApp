@@ -7,6 +7,8 @@ import { useSettingsContext } from '@/hooks/useSettingsContext';
 import CurrencyConversionScreen from '@/screens/CurrencyConversionScreen';
 import { ShoppingListScreen } from '@/screens/shoppingList/ShoppingListScreen';
 import { useLocalization } from '@/hooks/useLocalization';
+import { PackingListScreen } from '@/screens/packingList/PackingListScreen';
+import AppHeader from '@/components/AppHeader';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -25,8 +27,6 @@ export default function AppNavigator() {
           borderTopColor: appTheme.border,
           marginBottom: 5,
         },
-        headerStyle: { backgroundColor: appTheme.background.primary },
-        headerTintColor: appTheme.text.primary,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: string;
           if (route.name === 'CurrencyConversion') {
@@ -35,6 +35,8 @@ export default function AppNavigator() {
             iconName = focused ? 'book' : 'book-outline';
           } else if (route.name === 'ShoppingList') {
             iconName = focused ? 'list' : 'list-outline';
+          } else if (route.name === 'PackingList') {
+            iconName = focused ? 'briefcase' : 'briefcase-outline';
           } else {
             iconName = focused ? 'settings' : 'settings-outline';
           }
@@ -53,8 +55,10 @@ export default function AppNavigator() {
         name="CurrencyConversion"
         component={CurrencyConversionScreen}
         options={{
-          headerShown: false,
-          tabBarLabel: getResource('titleCurrencyCalculator'),
+          headerShown: true,
+          tabBarLabel: getResource('labelCurrency'),
+          title: getResource('titleCurrencyCalculator'),
+          header: props => <AppHeader {...props} />,
         }}
       />
       <Tab.Screen
@@ -62,7 +66,15 @@ export default function AppNavigator() {
         component={ShoppingListScreen}
         options={{
           headerShown: false,
-          tabBarLabel: getResource('titleShoppingLists'),
+          tabBarLabel: getResource('labelShopping'),
+        }}
+      />
+      <Tab.Screen
+        name="PackingList"
+        component={PackingListScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: getResource('labelPacking'),
         }}
       />
       <Tab.Screen
@@ -77,8 +89,10 @@ export default function AppNavigator() {
         name="Settings"
         component={SettingsScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
           tabBarLabel: getResource('titleSettings'),
+          title: getResource('titleSettings'),
+          header: props => <AppHeader {...props} />,
         }}
       />
     </Tab.Navigator>

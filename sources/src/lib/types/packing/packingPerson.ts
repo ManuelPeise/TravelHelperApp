@@ -1,13 +1,7 @@
-import { PackingCategory } from './packingCategory';
+import { PackingItem } from './packingItem';
 
 export interface PackingPerson {
-  id: string;
+  id: number;
   name: string;
-  categories: PackingCategory[];
+  items: PackingItem[];
 }
-
-export type DbPackingPerson = {
-  id: string;
-  name: string;
-  list_id: string;
-};

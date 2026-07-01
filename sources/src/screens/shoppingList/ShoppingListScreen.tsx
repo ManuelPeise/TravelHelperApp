@@ -5,6 +5,7 @@ import { useSettingsContext } from '@/hooks/useSettingsContext';
 import ShoppingListOverviewScreen from './ShoppingListOverviewScreen';
 import ShoppingListDetailScreen from './ShoppingListDetailScreen';
 import { useLocalization } from '@/hooks/useLocalization';
+import AppHeader from '@/components/AppHeader';
 
 const Stack = createNativeStackNavigator<ShoppingListStackParamList>();
 
@@ -16,9 +17,9 @@ export const ShoppingListScreen: React.FC = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: appTheme.background.primary },
         headerTintColor: appTheme.text.primary,
         contentStyle: { backgroundColor: appTheme.background.primary },
+        header: props => <AppHeader {...props} />,
       }}
     >
       <Stack.Screen
