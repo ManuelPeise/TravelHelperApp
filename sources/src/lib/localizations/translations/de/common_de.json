@@ -79,5 +79,16 @@
   "labelLanguage": "Sprache",
   "labelCurrency": "Währung",
   "labelShopping": "Einkauf",
-  "labelPacking": "Packliste"
+  "labelPacking": "Packliste",
+  "labelImpressum": "Impressum",
+  "labelReportBug": "Fehler melden",
+  "labelCopyright": "© 2024 Manuel Peise. Alle Rechte vorbehalten.",
+  "labelAppName": "TravelHelperApp",
+  "captionResponsible": "Verantwortlich für den Inhalt:",
+  "labelResponsibleName": "Manuel Peise",
+  "labelResponsibleAddress": "Zossener Straße 165, 12627 Berlin, Deutschland",
+  "captionContact": "Kontakt:",
+  "labelResponsibleEmail": "E-Mail: manuel.p80@gmx.de",
+  "captionUsageAndStorage": "Nutzung und Speicherung von Daten:",
+  "labelUsageAndStorageDescription": "Diese App speichert Daten ausschließlich lokal auf dem Gerät des Nutzers.\n\nEs erfolgt keine Übertragung, Speicherung oder Verarbeitung personenbezogener Daten auf externen Servern.\n\nEine Weitergabe von Daten an Dritte findet nicht statt. Die Nutzer haben jederzeit die Möglichkeit, lokal gespeicherte Daten über die App-Einstellungen zu löschen."
 }

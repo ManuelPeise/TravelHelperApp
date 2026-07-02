@@ -3,11 +3,20 @@ import DropdownInput from '@/components/DropdownInput';
 import NumberInput from '@/components/NumberInput';
 import { useCurrencyConversion } from '@/hooks/useCurrencyConversion';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useForm } from '@/hooks/useForm';
 import { CurrencyConversionFormModel } from '@/lib/types/CurrencyConversionFormModel';
 import { useLocalization } from '@/hooks/useLocalization';
-const CurrencyConversionScreen: React.FC = () => {
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { CurrencyConversionStackParamList } from '@/lib/types/navigation';
+
+type Props = NativeStackScreenProps<
+  CurrencyConversionStackParamList,
+  'CurrencyConversion'
+>;
+
+const CurrencyConversionScreen: React.FC<Props> = props => {
+  const { navigation } = props;
   const { appTheme, settings } = useSettingsContext();
   const { getResource } = useLocalization();
 
@@ -122,6 +131,21 @@ const CurrencyConversionScreen: React.FC = () => {
             )}
         </View>
       </View>
+      <View style={styles.additionalContent}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Impressum')}
+        >
+          <Text style={[styles.buttonText, { color: appTheme.text.primary }]}>
+            {getResource('labelImpressum')}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={[styles.buttonText, { color: appTheme.text.primary }]}>
+            {getResource('labelReportBug')}
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -164,6 +188,23 @@ const styles = StyleSheet.create({
   resultText: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  additionalContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    gap: 20,
+    width: '100%',
+    padding: 20,
+  },
+  button: {
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 16,
+    opacity: 0.8,
   },
 });
 

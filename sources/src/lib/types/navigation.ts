@@ -26,3 +26,9 @@ export type PackingListStackParamList = {
   PackingListOverview: undefined;
   PackingListDetail: { packingListId: number };
 };
+
+export type CurrencyConversionStackParamList = {
+  CurrencyConversion: undefined;
+  Impressum: undefined;
+  ReportBug: undefined;
+};

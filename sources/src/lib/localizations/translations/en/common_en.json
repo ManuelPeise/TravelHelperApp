@@ -79,5 +79,16 @@
   "titleWrongAnswer": "Wrong answer!",
   "labelCurrency": "Currency",
   "labelShopping": "Shopping",
-  "labelPacking": "Packing"
+  "labelPacking": "Packing",
+  "labelImpressum": "Impressum",
+  "labelReportBug": "Report a bug",
+  "labelCopyright": "© 2026 Manuel Peise. All rights reserved.",
+  "labelAppName": "TravelHelperApp",
+  "captionResponsible": "Responsible for the content:",
+  "labelResponsibleName": "Manuel Peise",
+  "labelResponsibleAddress": "Zossener Straße 165, 12627 Berlin, Germany",
+  "captionContact": "Contact:",
+  "labelResponsibleEmail": "E-Mail: manuel.p80@gmx.de",
+  "captionUsageAndStorage": "Usage and storage of data:",
+  "labelUsageAndStorageDescription": "This app stores data exclusively locally on the user's device.\n\nNo personal data is transmitted to, stored on, or processed by external servers.\n\nData is not shared with third parties. Users have the option to delete locally stored data via the app settings at any time."
 }

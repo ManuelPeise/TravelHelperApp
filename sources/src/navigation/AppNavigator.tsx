@@ -4,11 +4,11 @@ import type { RootTabParamList } from '@lib/types/navigation';
 import SettingsScreen from '@/screens/SettingsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
-import CurrencyConversionScreen from '@/screens/CurrencyConversionScreen';
 import { ShoppingListScreen } from '@/screens/shoppingList/ShoppingListScreen';
 import { useLocalization } from '@/hooks/useLocalization';
 import { PackingListScreen } from '@/screens/packingList/PackingListScreen';
 import AppHeader from '@/components/AppHeader';
+import CurrencyConversion from '@/screens/currencyConversion/CurrencyConversion';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -53,12 +53,11 @@ export default function AppNavigator() {
     >
       <Tab.Screen
         name="CurrencyConversion"
-        component={CurrencyConversionScreen}
+        component={CurrencyConversion}
         options={{
-          headerShown: true,
+          headerShown: false,
           tabBarLabel: getResource('labelCurrency'),
           title: getResource('titleCurrencyCalculator'),
-          header: props => <AppHeader {...props} />,
         }}
       />
       <Tab.Screen
