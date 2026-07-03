@@ -1,8 +1,122 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# TravelHelper
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+> **Explore. Plan. Enjoy.**
+
+A React Native travel companion app that helps you manage currencies, shopping lists, packing lists, and vocabulary — all stored locally on your device with no data sent to external servers.
+
+---
+
+## Features
+
+| Feature                | Description                                                            |
+| ---------------------- | ---------------------------------------------------------------------- |
+| **Currency Converter** | Convert between currencies using live exchange rates                   |
+| **Shopping List**      | Create and manage multiple shopping lists with products and categories |
+| **Packing List**       | Organize packing lists per trip, assign items to persons               |
+| **Vocabulary**         | Learn travel vocabulary by category with a built-in quiz mode          |
+| **Settings**           | Switch language, theme, and source/target currencies                   |
+
+---
+
+## Tech Stack
+
+- **React Native** 0.85.3
+- **React** 19.2.3
+- **TypeScript** 5.8.3
+- **React Navigation** 7.x (Bottom Tabs + Native Stack)
+- **SQLite** (`react-native-sqlite-storage`) — all data stored locally
+- **i18next** — English and German localizations
+- **Ionicons** — UI icons
+
+---
+
+## Requirements
+
+| Platform | Requirement           |
+| -------- | --------------------- |
+| Android  | API 24+ (Android 7.0) |
+| iOS      | arm64 device (iPhone) |
+| Node.js  | 18+                   |
+| Java     | 17+                   |
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Android
+
+```bash
+npx react-native run-android
+```
+
+### 3. iOS
+
+```bash
+cd ios && pod install && cd ..
+npx react-native run-ios
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+├── hooks/            # Custom React hooks
+├── lib/
+│   ├── constants.ts
+│   ├── database/     # SQLite repositories
+│   ├── enums/
+│   ├── localizations/ # i18n translations (EN, DE)
+│   └── types/
+├── navigation/       # Root navigator
+├── providers/        # Context providers
+└── screens/
+    ├── currencyConversion/
+    ├── packingList/
+    ├── shoppingList/
+    ├── vocabularyScreen/
+    ├── report/        # Bug report screen
+    ├── impressum/
+    └── SettingsScreen.tsx
+```
+
+---
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+```
+EMAILJS_SERVICE_ID=
+EMAILJS_TEMPLATE_ID=
+EMAILJS_PUBLIC_KEY=
+```
+
+---
+
+## Privacy
+
+All data is stored exclusively on the user's device. No personal data is transmitted to or processed by external servers. Locally stored data can be deleted at any time via the app settings.
+
+---
+
+## License
+
+© 2026 Manuel Peise. All rights reserved.
 
 ## Step 1: Start Metro
 
