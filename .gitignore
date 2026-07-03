@@ -109,3 +109,5 @@ react-native-debugger-open
 # Build artifacts
 dist/
 build/
+
+*.env

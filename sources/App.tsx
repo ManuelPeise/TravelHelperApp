@@ -7,17 +7,21 @@ import { initializeDatabase } from '@lib/database/SqliteDb';
 import SettingsProvider from '@/providers/SettingsProvider';
 import AppContainer from '@/components/AppContainer';
 import CurrencyConversionProvider from '@/providers/CurrencyConversionProvider';
+import { useBugReporting } from '@/hooks/useBugReporting';
 
 const App: React.FC = () => {
   const [dbReady, setDbReady] = useState(false);
+  const { reportBugBySystem } = useBugReporting(); // Initialize the bug reporting hook
 
   useEffect(() => {
     initializeDatabase()
       .then(() => {
         setDbReady(true);
       })
-      .catch(console.error);
-  }, []);
+      .catch(error => {
+        reportBugBySystem(error);
+      });
+  }, [reportBugBySystem]);
 
   if (!dbReady) {
     return (

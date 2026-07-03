@@ -150,49 +150,49 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appmodules::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appmodules-Debug-6f1233299861646eee77.json",
+					"jsonFile" : "target-appmodules-Debug-5fa2607e5f2256d6487d.json",
 					"name" : "appmodules",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "react_codegen_AsyncStorageSpec::@15af80695a6281ecf900",
-					"jsonFile" : "target-react_codegen_AsyncStorageSpec-Debug-a89747b74be3ab3527f4.json",
+					"jsonFile" : "target-react_codegen_AsyncStorageSpec-Debug-d8a78cf5a536aa62aa8e.json",
 					"name" : "react_codegen_AsyncStorageSpec",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "react_codegen_RNLocalizeSpec::@f3ba5298aff84514e205",
-					"jsonFile" : "target-react_codegen_RNLocalizeSpec-Debug-326f89ad0f5b8a7d6f30.json",
+					"jsonFile" : "target-react_codegen_RNLocalizeSpec-Debug-7a89bbc0967ae7289b2a.json",
 					"name" : "react_codegen_RNLocalizeSpec",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d",
-					"jsonFile" : "target-react_codegen_RNVectorIconsSpec-Debug-a7c28fbebdf3dd82c57c.json",
+					"jsonFile" : "target-react_codegen_RNVectorIconsSpec-Debug-aba4ba3d165364c1a856.json",
 					"name" : "react_codegen_RNVectorIconsSpec",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "react_codegen_rndocumentpicker::@1e246c1f1267e461f98b",
-					"jsonFile" : "target-react_codegen_rndocumentpicker-Debug-80ea0d0722da460115c9.json",
+					"jsonFile" : "target-react_codegen_rndocumentpicker-Debug-f7cb7d6d073296250732.json",
 					"name" : "react_codegen_rndocumentpicker",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 5,
 					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
-					"jsonFile" : "target-react_codegen_rnscreens-Debug-94ceba5c946b65a316d4.json",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-67b31fd41a8472fe12b9.json",
 					"name" : "react_codegen_rnscreens",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
-					"jsonFile" : "target-react_codegen_safeareacontext-Debug-b909bc1df0a9d7ffda04.json",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-48060f0f6134bff8c193.json",
 					"name" : "react_codegen_safeareacontext",
 					"projectIndex" : 0
 				}
@@ -202,7 +202,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/armeabi-v7a",
+		"build" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86",
 		"source" : "C:/Dev/TravelHelper/TravelHelperApp/sources/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

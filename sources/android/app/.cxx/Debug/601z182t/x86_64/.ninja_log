@@ -1,5 +1,5 @@
 # ninja log v5
-1	23	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
+1	31	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
 26	9430	8026560502171321	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/6fcc16f97654ec1dcf1c29b976815352/react/renderer/components/safeareacontext/States.cpp.o	fd5346a9709defc3
 42288	42497	8026560833320711	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/intermediates/cxx/Debug/601z182t/obj/x86_64/libreact_codegen_rnscreens.so	17f010eacecf83fb
 8	16909	8026560576854262	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/451d70ee5c3bb0383bf9c4f86a2685d6/components/safeareacontext/RNCSafeAreaViewState.cpp.o	1315cd59aee40790
@@ -36,7 +36,7 @@
 16040	29971	8026560707637944	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/4ed386853da47401102dd1df04241b7e/renderer/components/rnscreens/RNSStackHeaderSubviewState.cpp.o	de739a6e8b24e941
 16953	30787	8026560716268038	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/e4463d35e716fd4400062fda569a10b9/cpp/react/renderer/components/rnscreens/RNSStackScreenState.cpp.o	e14a3df8565d06aa
 15871	32695	8026560735313579	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/d307bd4acffac1d727625fa5204c332e/react/renderer/components/rnscreens/RNSTabsHostShadowNode.cpp.o	993c903817808822
-20	4197	8042763226414660	CMakeFiles/appmodules.dir/OnLoad.cpp.o	e827eda61702ccea
+35	3873	8047281183232904	CMakeFiles/appmodules.dir/OnLoad.cpp.o	e827eda61702ccea
 30612	40673	8026560815333535	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o	20629e83598bae14
 24283	42288	8026560831070181	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/84ef1d9d56168647cca322eb30de549a/source/codegen/jni/react/renderer/components/rnscreens/Props.cpp.o	df7de9715ba09487
 55	10210	8036626679323930	rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/Props.cpp.o	e974d2fac73ca046
@@ -54,9 +54,9 @@
 19870	38833	8026560796915109	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/rnscreens.cpp.o	4ca2312d35db72e6
 20623	41323	8026560821496312	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/876314556397b1ffc2fa3dbb1eef18b0/jni/react/renderer/components/rnscreens/EventEmitters.cpp.o	77ed62740780ecfb
 24175	42269	8026560831080717	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/876314556397b1ffc2fa3dbb1eef18b0/jni/react/renderer/components/rnscreens/ComponentDescriptors.cpp.o	c57df16f5f344283
-15	11575	8042763299616520	CMakeFiles/appmodules.dir/C_/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	acbade7216bff340
-11576	12349	8042763307631190	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/intermediates/cxx/Debug/601z182t/obj/x86_64/libappmodules.so	b9a097a88da1f1f2
-34	1302	8046170140968823	build.ninja	d51b1e8c9d231c56
+24	13124	8047281274923239	CMakeFiles/appmodules.dir/C_/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	acbade7216bff340
+13125	13559	8047281279553181	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/intermediates/cxx/Debug/601z182t/obj/x86_64/libappmodules.so	b9a097a88da1f1f2
+38	1256	8047285728215897	build.ninja	d51b1e8c9d231c56
 40	8882	8036626666153654	AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/ShadowNodes.cpp.o	fa01c57d32281221
 48	4357	8028862354651875	RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/States.cpp.o	2344b91fc1542af0
 54	4813	8028862359253032	RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/EventEmitters.cpp.o	e59d01ff45fe3bf7
@@ -65,18 +65,5 @@
 62	9124	8036626668563163	rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/ComponentDescriptors.cpp.o	1aed9c74844c4091
 28	9046	8036626667707037	AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/ComponentDescriptors.cpp.o	def021d8d0fae695
 17	10067	8036626678011941	AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/Props.cpp.o	ac061040f6521581
-2	26	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	29	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	27	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	26	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	31	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	29	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-2	32	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-2	28	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	31	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	29	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-2	27	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	22	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-1	25	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-2	34	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
-3	43	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
+3	54	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232
+1	34	0	C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86_64/CMakeFiles/cmake.verify_globs	5fabd06069f7f232

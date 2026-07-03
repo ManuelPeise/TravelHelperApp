@@ -3,14 +3,14 @@ import { useLocalization } from '@/hooks/useLocalization';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { CurrencyConversionStackParamList } from '@/lib/types/navigation';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { View, Text, StyleSheet } from 'react-native';
+import { DEVELOPER_NAME, DEVELOPER_ADDRESS, CONTACT_EMAIL } from '@env';
 type Props = NativeStackScreenProps<
   CurrencyConversionStackParamList,
   'Impressum'
 >;
 
-const ImpressumScreen: React.FC<Props> = props => {
+const ImpressumScreen: React.FC<Props> = () => {
   const { appTheme } = useSettingsContext();
   const { getResource } = useLocalization();
 
@@ -47,12 +47,18 @@ const ImpressumScreen: React.FC<Props> = props => {
           <Text
             style={[styles.responsibleText, { color: appTheme.text.primary }]}
           >
-            {getResource('labelResponsibleName')}
+            {getResource('labelResponsibleName').replace(
+              '{Name}',
+              DEVELOPER_NAME,
+            )}
           </Text>
           <Text
             style={[styles.responsibleText, { color: appTheme.text.primary }]}
           >
-            {getResource('labelResponsibleAddress')}
+            {getResource('labelResponsibleAddress').replace(
+              '{Address}',
+              DEVELOPER_ADDRESS,
+            )}
           </Text>
           <Text
             style={[
@@ -70,7 +76,10 @@ const ImpressumScreen: React.FC<Props> = props => {
           <Text
             style={[styles.responsibleText, { color: appTheme.text.primary }]}
           >
-            {getResource('labelResponsibleEmail')}
+            {getResource('labelResponsibleEmail').replace(
+              '{Email}',
+              CONTACT_EMAIL,
+            )}
           </Text>
           <Text
             style={[

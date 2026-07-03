@@ -3,13 +3,15 @@ import { useForm } from '@/hooks/useForm';
 import { useLocalization } from '@/hooks/useLocalization';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import { SupportedCurrencies, SupportedLanguages } from '@/lib/constants';
-import { resetDatabase } from '@/lib/database/SettingsRepository';
+import { dropDatabase } from '@/lib/database/SqliteDb';
+import RNRestart from 'react-native-restart';
 import { CurrencyEnum } from '@/lib/enums/CurrencyEnum';
 import { LanguageEnum } from '@/lib/enums/LanguageEnum';
 import { Settings } from '@/lib/types/Settings';
 import React from 'react';
 import {
   ActivityIndicator,
+  Alert,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -40,10 +42,33 @@ const SettingsScreen: React.FC = () => {
   );
 
   const handleResetDatabase = React.useCallback(() => {
-    setIsLoading(true);
-    resetDatabase();
-    setIsLoading(false);
-  }, []);
+    Alert.alert(
+      getResource('labelResetDatabase'),
+      getResource('labelResetDatabaseConfirm'),
+      [
+        { text: getResource('labelCancel'), style: 'cancel' },
+        {
+          text: getResource('labelReset'),
+          style: 'destructive',
+          onPress: async () => {
+            setIsLoading(true);
+            try {
+              await dropDatabase();
+              Alert.alert(
+                getResource('labelResetDatabase'),
+                getResource('labelDatabaseResetSuccess'),
+                [{ text: 'OK', onPress: () => RNRestart.restart() }],
+              );
+            } catch (error) {
+              console.error('Error resetting database:', error);
+            } finally {
+              setIsLoading(false);
+            }
+          },
+        },
+      ],
+    );
+  }, [getResource]);
 
   if (isLoading) {
     return (

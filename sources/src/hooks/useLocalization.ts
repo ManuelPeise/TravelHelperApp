@@ -14,7 +14,6 @@ export const useLocalization = () => {
 
   const changeLanguage = React.useCallback(
     (lng: LanguageEnum) => {
-      console.log(lng);
       i18n.changeLanguage(lng.toLocaleLowerCase());
     },
     [i18n],

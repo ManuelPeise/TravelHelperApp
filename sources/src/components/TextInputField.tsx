@@ -9,6 +9,8 @@ interface IProps {
   placeholderTextColor?: string;
   disabled?: boolean;
   color?: string;
+  multiline?: boolean;
+  numberOfLines?: number;
 }
 
 const TextInputField: React.FC<IProps> = props => {
@@ -19,6 +21,8 @@ const TextInputField: React.FC<IProps> = props => {
     placeholderTextColor,
     disabled,
     color,
+    multiline,
+    numberOfLines,
   } = props;
   const { appTheme } = useSettingsContext();
 
@@ -35,7 +39,10 @@ const TextInputField: React.FC<IProps> = props => {
       <TextInput
         style={[
           styles.input,
-          { backgroundColor: appTheme.background.secondary },
+          {
+            height: multiline ? (numberOfLines ?? 1) * 15 : 40,
+            backgroundColor: appTheme.background.secondary,
+          },
           color ? { color } : { color: appTheme.text.primary },
         ]}
         value={value}
@@ -43,6 +50,8 @@ const TextInputField: React.FC<IProps> = props => {
         placeholder={placeholder}
         editable={!disabled}
         placeholderTextColor={placeholderTextColor ?? appTheme.text.disabled}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
       />
     </View>
   );
@@ -58,9 +67,9 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '100%',
-    height: 40,
     borderWidth: 0,
     paddingHorizontal: 12,
+    textAlignVertical: 'top',
   },
 });
 export default TextInputField;

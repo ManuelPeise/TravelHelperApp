@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/intermediates/cxx/Debug/601z182t/obj/x86/libappmodules.so"
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/build/intermediates/cxx/Debug/601z182t/obj/arm64-v8a/libappmodules.so"
 		}
 	],
 	"backtrace" : 3,
@@ -292,11 +292,15 @@
 	[
 		{
 			"backtrace" : 4,
-			"id" : "react_codegen_RNLocalizeSpec::@f3ba5298aff84514e205"
+			"id" : "react_codegen_AsyncStorageSpec::@15af80695a6281ecf900"
 		},
 		{
 			"backtrace" : 4,
-			"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a"
+			"id" : "react_codegen_rndocumentpicker::@1e246c1f1267e461f98b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "react_codegen_RNLocalizeSpec::@f3ba5298aff84514e205"
 		},
 		{
 			"backtrace" : 4,
@@ -308,11 +312,7 @@
 		},
 		{
 			"backtrace" : 4,
-			"id" : "react_codegen_AsyncStorageSpec::@15af80695a6281ecf900"
-		},
-		{
-			"backtrace" : 4,
-			"id" : "react_codegen_rndocumentpicker::@1e246c1f1267e461f98b"
+			"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a"
 		}
 	],
 	"id" : "appmodules::@6890427a1f51a3e7e1df",
@@ -321,32 +321,32 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments",
+				"fragment" : "-Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\android\\app\\build\\intermediates\\cxx\\Debug\\601z182t\\obj\\x86\\libreact_codegen_safeareacontext.so",
+				"fragment" : "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\android\\app\\build\\intermediates\\cxx\\Debug\\601z182t\\obj\\arm64-v8a\\libreact_codegen_safeareacontext.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\android\\app\\build\\intermediates\\cxx\\Debug\\601z182t\\obj\\x86\\libreact_codegen_rnscreens.so",
+				"fragment" : "C:\\Dev\\TravelHelper\\TravelHelperApp\\sources\\android\\app\\build\\intermediates\\cxx\\Debug\\601z182t\\obj\\arm64-v8a\\libreact_codegen_rnscreens.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\3c01aea05d2737e987399f1309ae090e\\workspace\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.x86\\libfbjni.so",
+				"fragment" : "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\3c01aea05d2737e987399f1309ae090e\\workspace\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.arm64-v8a\\libfbjni.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\2321ffcfab7439b6200de4724cf7ba76\\workspace\\transformed\\react-android-0.85.3-debug\\prefab\\modules\\jsi\\libs\\android.x86\\libjsi.so",
+				"fragment" : "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\2321ffcfab7439b6200de4724cf7ba76\\workspace\\transformed\\react-android-0.85.3-debug\\prefab\\modules\\jsi\\libs\\android.arm64-v8a\\libjsi.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\2321ffcfab7439b6200de4724cf7ba76\\workspace\\transformed\\react-android-0.85.3-debug\\prefab\\modules\\reactnative\\libs\\android.x86\\libreactnative.so",
+				"fragment" : "C:\\Users\\manue\\.gradle\\caches\\9.3.1\\transforms\\2321ffcfab7439b6200de4724cf7ba76\\workspace\\transformed\\react-android-0.85.3-debug\\prefab\\modules\\reactnative\\libs\\android.arm64-v8a\\libreactnative.so",
 				"role" : "libraries"
 			},
 			{
@@ -425,145 +425,145 @@
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/AsyncStorageSpec-generated.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/AsyncStorageSpec-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/ComponentDescriptors.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/EventEmitters.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/Props.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/ShadowNodes.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/States.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/AsyncStorageSpec_autolinked_build/CMakeFiles/react_codegen_AsyncStorageSpec.dir/react/renderer/components/AsyncStorageSpec/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/ComponentDescriptors.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/EventEmitters.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/Props.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/ShadowNodes.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/States.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/react/renderer/components/rndocumentpicker/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/rndocumentpicker-generated.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/rndocumentpicker_autolinked_build/CMakeFiles/react_codegen_rndocumentpicker.dir/rndocumentpicker-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/RNLocalizeSpec-generated.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/RNLocalizeSpec-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/ComponentDescriptors.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/EventEmitters.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/Props.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/ShadowNodes.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/States.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNLocalizeSpec_autolinked_build/CMakeFiles/react_codegen_RNLocalizeSpec.dir/react/renderer/components/RNLocalizeSpec/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o",
+			"path" : "C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/Debug/601z182t/arm64-v8a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o",
 			"sourceGroupIndex" : 1
 		}
 	],

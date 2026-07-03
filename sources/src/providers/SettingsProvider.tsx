@@ -5,7 +5,6 @@ import {
 } from '@/lib/database/SettingsRepository';
 import { CurrencyEnum } from '@/lib/enums/CurrencyEnum';
 import { LanguageEnum } from '@/lib/enums/LanguageEnum';
-import i18n from '@/lib/localizations/i18n';
 import { Settings } from '@/lib/types/Settings';
 import React, { useCallback, useState } from 'react';
 
@@ -49,7 +48,7 @@ const SettingsProvider: React.FC<IProps> = ({ children }) => {
       }
     };
     loadSettings();
-  }, []);
+  }, [changeLanguage]);
 
   return (
     <SettingsContext.Provider

@@ -77,6 +77,7 @@ const AddPackingItemModal: React.FC<AddPackingItemProps> = props => {
     personId,
     onAddItem,
     onAddItemToDb,
+    resetForm,
   ]);
 
   const handleChangeCount = React.useCallback(

@@ -28,7 +28,7 @@ export type PackingListStackParamList = {
 };
 
 export type CurrencyConversionStackParamList = {
-  CurrencyConversion: undefined;
+  CurrencyConversionHome: undefined;
   Impressum: undefined;
   ReportBug: undefined;
 };

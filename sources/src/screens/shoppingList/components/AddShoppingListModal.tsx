@@ -53,7 +53,7 @@ const AddShoppingListModal: React.FC<IProps> = props => {
           ]}
         >
           <Text style={[styles.title, { color: appTheme.text.primary }]}>
-            {getResource('titleAddSchoppingList')}
+            {getResource('titleAddShoppingList')}
           </Text>
           <TextInputField
             value={values.name}

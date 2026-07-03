@@ -6,6 +6,7 @@ import { useSettingsContext } from '@/hooks/useSettingsContext';
 import AppHeader from '@/components/AppHeader';
 import CurrencyConversionScreen from './CurrencyConversionScreen';
 import ImpressumScreen from '../impressum/ImpressumScreen';
+import BugReportScreen from '../report/BugReportScreen';
 
 const Stack = createNativeStackNavigator<CurrencyConversionStackParamList>();
 
@@ -22,7 +23,7 @@ const CurrencyConversion: React.FC = () => {
       }}
     >
       <Stack.Screen
-        name="CurrencyConversion"
+        name="CurrencyConversionHome"
         component={CurrencyConversionScreen}
         options={{ title: getResource('titleCurrencyCalculator') }}
       />
@@ -30,6 +31,11 @@ const CurrencyConversion: React.FC = () => {
         name="Impressum"
         component={ImpressumScreen}
         options={{ title: getResource('labelImpressum') }}
+      />
+      <Stack.Screen
+        name="ReportBug"
+        component={BugReportScreen}
+        options={{ title: getResource('labelBugReport') }}
       />
     </Stack.Navigator>
   );

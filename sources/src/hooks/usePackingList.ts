@@ -110,7 +110,8 @@ export const usePackingList = (
         }
       } catch (err) {
         handleStateUpdate({
-          error: err instanceof Error ? err.message : getResource('errorUnknown'),
+          error:
+            err instanceof Error ? err.message : getResource('errorUnknown'),
         });
       }
     },

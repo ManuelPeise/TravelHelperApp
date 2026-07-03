@@ -12,7 +12,7 @@ import { CurrencyConversionStackParamList } from '@/lib/types/navigation';
 
 type Props = NativeStackScreenProps<
   CurrencyConversionStackParamList,
-  'CurrencyConversion'
+  'CurrencyConversionHome'
 >;
 
 const CurrencyConversionScreen: React.FC<Props> = props => {
@@ -140,7 +140,10 @@ const CurrencyConversionScreen: React.FC<Props> = props => {
             {getResource('labelImpressum')}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('ReportBug')}
+        >
           <Text style={[styles.buttonText, { color: appTheme.text.primary }]}>
             {getResource('labelReportBug')}
           </Text>
@@ -203,8 +206,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    fontSize: 16,
-    opacity: 0.8,
+    fontSize: 14,
+    opacity: 0.6,
   },
 });
 
