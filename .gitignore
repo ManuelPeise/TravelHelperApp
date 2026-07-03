@@ -34,6 +34,7 @@ android/app/build/
 android/build/
 android/local.properties
 android/captures/
+sources/android/gradle.properties
 *.keystore
 *.jks
 
@@ -111,3 +112,5 @@ dist/
 build/
 
 *.env
+*./gradlew bundleRelease
+**/sources/android/gradle.properties
