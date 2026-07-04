@@ -3,7 +3,7 @@ import { useVocabulary } from '@/hooks/useVocabulary';
 import { VocabularyStackParamList } from '@/lib/types/navigation';
 import { NativeStackScreenProps } from 'node_modules/@react-navigation/native-stack/lib/typescript/src/types';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import VocabularyView from './components/VocabularyView';
 
 type Props = NativeStackScreenProps<VocabularyStackParamList, 'VocabularyView'>;
@@ -13,13 +13,22 @@ const VocabularyViewScreen: React.FC<Props> = props => {
   const { appTheme } = useSettingsContext();
   const { category, vocabularySettings } = route.params;
 
-  const { vocabularyViewItems } = useVocabulary(
+  const { vocabularyViewItems, isLoading } = useVocabulary(
     vocabularySettings.sourceLanguage,
     vocabularySettings.targetLanguage,
     category,
   );
 
-  console.log('vocabularyViewItems', vocabularyViewItems);
+  if (isLoading) {
+    return (
+      <ActivityIndicator
+        size="large"
+        color={appTheme.text.primary}
+        style={{ flex: 1 }}
+      />
+    );
+  }
+
   return (
     <View
       style={[
