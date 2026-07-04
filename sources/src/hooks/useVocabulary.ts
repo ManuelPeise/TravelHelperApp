@@ -54,6 +54,8 @@ export const useVocabulary = (
 
   const onLoadVocabularies = React.useCallback(
     async (languages: LanguageEnum[]) => {
+      setIsLoading(true);
+
       let vocabularies = await getVocabulariesFromDb(languages);
 
       if (category) {
@@ -64,6 +66,7 @@ export const useVocabulary = (
 
       vocabularies.forEach(vocab => console.log('vocab', vocab.category));
       setVocabularies(vocabularies);
+      setIsLoading(false);
     },
     [category],
   );

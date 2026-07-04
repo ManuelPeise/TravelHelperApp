@@ -25,7 +25,7 @@ type Props = NativeStackScreenProps<
 type BugReportModel = {
   subject: string;
   description: string;
-  email: string;
+  stepsToReproduce: string;
 };
 
 const BugReportScreen: React.FC<Props> = props => {
@@ -37,7 +37,7 @@ const BugReportScreen: React.FC<Props> = props => {
     useForm<BugReportModel>({
       subject: '',
       description: '',
-      email: '',
+      stepsToReproduce: '',
     });
 
   const { isLoading, reportBug } = useBugReporting();
@@ -46,7 +46,7 @@ const BugReportScreen: React.FC<Props> = props => {
     const result = await reportBug(
       values.subject,
       values.description,
-      values.email,
+      values.stepsToReproduce,
     );
     if (!result.success) {
       Alert.alert(getResource('labelBugReport'), getResource(result.errorKey));
@@ -76,16 +76,34 @@ const BugReportScreen: React.FC<Props> = props => {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.formContainer}>
+          <Text
+            style={[
+              styles.caption,
+              { color: appTheme.text.primary, marginTop: 10 },
+            ]}
+          >
+            {getResource('captionError')}
+          </Text>
           <TextInputField
-            placeholder={getResource('labelSubject')}
+            placeholder={getResource('labelErrorShortDescription')}
             value={values.subject}
             onChange={value => handleChange('subject', value)}
           />
+          <Text
+            style={[
+              styles.caption,
+              { color: appTheme.text.primary, marginTop: 10 },
+            ]}
+          >
+            {getResource('captionStepsToReproduce')}
+          </Text>
           <TextInputField
-            placeholder={getResource('labelYourEmail')}
+            placeholder={getResource('labelStepsToReproduce')}
             placeholderTextColor={appTheme.text.disabled}
-            value={values.email}
-            onChange={value => handleChange('email', value)}
+            value={values.stepsToReproduce}
+            onChange={value => handleChange('stepsToReproduce', value)}
+            multiline={true}
+            numberOfLines={20}
           />
           <Text
             style={[

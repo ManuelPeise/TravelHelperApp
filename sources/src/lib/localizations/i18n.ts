@@ -4,10 +4,14 @@ import * as RNLocalize from 'react-native-localize';
 
 import common_de from './translations/de/common_de.json';
 import common_en from './translations/en/common_en.json';
+import common_dk from './translations/dk/common_dk.json';
 
 const resources = {
   de: {
     translation: common_de,
+  },
+  dk: {
+    translation: common_dk,
   },
   en: {
     translation: common_en,

@@ -1,0 +1,4 @@
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/RelWithDebInfo/1j2d1g1i/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/RelWithDebInfo/1j2d1g1i/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/RelWithDebInfo/1j2d1g1i/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+C:/Dev/TravelHelper/TravelHelperApp/sources/android/app/.cxx/RelWithDebInfo/1j2d1g1i/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir

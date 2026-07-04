@@ -1,7 +1,7 @@
 import { VocabularyStackParamList } from '@/lib/types/navigation';
 import { NativeStackScreenProps } from 'node_modules/@react-navigation/native-stack/lib/typescript/src/types';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import VocabularyQuiz from './components/VocabulatyQuiz';
 import { useVocabulary } from '@/hooks/useVocabulary';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
@@ -13,12 +13,21 @@ const VocabularyQuizScreen: React.FC<Props> = props => {
   const { appTheme } = useSettingsContext();
   const { category, vocabularySettings } = route.params;
 
-  const { vocabularyQuizItems } = useVocabulary(
+  const { isLoading, vocabularyQuizItems } = useVocabulary(
     vocabularySettings.sourceLanguage,
     vocabularySettings.targetLanguage,
     category,
   );
 
+  if (isLoading) {
+    return (
+      <ActivityIndicator
+        size="large"
+        color={appTheme.text.primary}
+        style={{ flex: 1 }}
+      />
+    );
+  }
   return (
     <View
       style={[

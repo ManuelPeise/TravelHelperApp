@@ -50,6 +50,7 @@ export const PackingListDetails: React.FC<Props> = props => {
     addPackingItemToDb,
     updatePackingItemForPerson,
     deletePackingItemForPerson,
+    onLoadPackingListData,
   } = usePackingList(packingListId);
   const { getResource } = useLocalization();
 
@@ -72,9 +73,10 @@ export const PackingListDetails: React.FC<Props> = props => {
     [],
   );
 
-  const handleCloseAddPackingItemModal = React.useCallback(() => {
+  const handleCloseAddPackingItemModal = React.useCallback(async () => {
+    await onLoadPackingListData();
     setState(prevState => ({ ...prevState, addPackingItemModalOpen: false }));
-  }, []);
+  }, [onLoadPackingListData]);
 
   const handleAddPerson = React.useCallback(
     async (name: string) => {
@@ -98,7 +100,7 @@ export const PackingListDetails: React.FC<Props> = props => {
         count,
         checked,
       );
-      handleCloseAddPackingItemModal();
+      await handleCloseAddPackingItemModal();
     },
     [
       packingListId,

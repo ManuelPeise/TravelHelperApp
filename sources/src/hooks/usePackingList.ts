@@ -47,6 +47,7 @@ type UsePackingListResult = {
     listId: number,
     itemId: number,
   ) => Promise<void>;
+  onLoadPackingListData: () => Promise<void>;
 };
 
 type UsePackingListState = {
@@ -283,5 +284,6 @@ export const usePackingList = (
     onAssignPackingItemToPerson: onAddPackingItem,
     updatePackingItemForPerson: updatePackingItem,
     deletePackingItemForPerson: deletePackingItemForPerson,
+    onLoadPackingListData: onLoad,
   };
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Linking } from 'react-native';
 import { CONTACT_EMAIL } from '@env';
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type ReportBugResult = { success: true } | { success: false; errorKey: string };
 
@@ -13,20 +12,21 @@ export const useBugReporting = () => {
     async (
       subject: string,
       content: string,
-      email: string,
+      stepsToReproduce: string,
     ): Promise<ReportBugResult> => {
       try {
         setIsLoading(true);
 
-        if (!subject.trim() || !content.trim() || !email.trim()) {
+        if (!subject.trim() || !content.trim() || !stepsToReproduce.trim()) {
           return { success: false, errorKey: 'errorBugReportFieldsRequired' };
         }
 
-        if (!EMAIL_REGEX.test(email.trim())) {
-          return { success: false, errorKey: 'errorInvalidEmail' };
-        }
-
-        const body = `${content}\n\nFrom: ${email}`;
+        const stepsToReproduceList = stepsToReproduce
+          .split(',')
+          .map(step => step.trim());
+        const body = `${content}\n\nSteps to reproduce:\n${stepsToReproduceList
+          .map((step, index) => `${index + 1}. ${step}`)
+          .join('\n')}`;
         const mailtoUri = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
           subject,
         )}&body=${encodeURIComponent(body)}`;
